@@ -1,0 +1,9 @@
+.item {
+  display: grid;
+}
+
+.image {
+  border-radius: 9999px;
+  height: 6rem;
+  width: 6rem;
+}
