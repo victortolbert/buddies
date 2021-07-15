@@ -1,7 +1,7 @@
 <template>
   <header class="relative overflow-hidden plants-header bg-light-blue">
     <nav class="flex items-center p-6 text-white bg-black h-18">
-      <RouterLink to="/plants" class="brand">
+      <RouterLink to="/" class="brand">
         <SvgLogoMark />
         <span class="brand-text">Catopia!</span>
       </RouterLink>
