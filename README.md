@@ -29,3 +29,25 @@ My mission is to build a small application that allows users to search and filte
 - [] Some accessibility focus
 - [] A few micro-interactions
 - [] Node / Express / JSON-Server API Mocking
+
+## Developing Vue
+
+```
+$ cd vue
+$ npm run dev
+```
+
+**Production builds**
+
+```
+npm run build
+```
+
+**Static Analysis**
+
+```
+npm run lint        # Check CSS and JS
+npm run lint:style  # Check CSS
+npm run lint:js     # Check JS
+npm run test        # Run Unit Tests
+```
