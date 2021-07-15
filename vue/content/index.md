@@ -2,16 +2,43 @@
 title: Getting started
 ---
 
-## Preview URL
+# [Can my cat eat that?](/plants)
 
-- <https://catopia.designcoder.net>
+## Components
 
-## Mocking Test Data and Mock API URL
-
-- https://api.victortolbert.com/buddies
-
-## Folder Structures
-
-## Repository
-
-https://github.com/victortolbert/buddies
+- Avatar
+- BackgroundOverlay
+- Badge
+- BaseSvg
+- ButtonGroup
+- Card
+- CategorySwitcher
+- Counter
+- DataTable
+- DataTableRow
+- Detail
+- DetailButton
+- DetailModal
+- FavoriteButton
+- Grid
+- Header
+- Hero
+- Item
+- List
+- MediaObject
+- PendingPlaceholder
+- SelectMenu
+- SidebarNavigation
+- SlideOver
+- SvgCatLeft
+- SvgCatRight
+- SvgGrid
+- SvgList
+- SvgLogoMark
+- SvgSearch
+- SvgWater
+- SvgX
+- Table
+- Toolbar
+- Tools
+- ViewSwitcher
