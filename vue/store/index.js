@@ -15,24 +15,24 @@ export const mutations = {
     Object.assign(state.user, user);
   },
   setCheckboxes(state, dataObj) {
-    console.log(dataObj);
+    // console.log(dataObj);
     state.checkboxes = dataObj.data;
     const firstElem = dataObj.data[Object.keys(dataObj.data)[0]];
     state.checked[firstElem.parent_id] = [firstElem.id];
-    console.log(state.checked);
+    // console.log(state.checked);
   },
   setTreeState(state, dataObj) {
     state.checked[dataObj.id] = dataObj.value;
-    console.log(state.checked);
+    // console.log(state.checked);
   },
-  addSelectedTenant(state, tenant) {
-    this.state.selectedTenants.push(tenant)
-  },
-  removeSelectedTenant(state, id) {
-    this.state.selectedTenants = this.state.selectedTenants.filter(tenant => {
-      return tenant.id != id
-    })
-  }
+  // addSelectedTenant(state, tenant) {
+  //   this.state.selectedTenants.push(tenant)
+  // },
+  // removeSelectedTenant(state, id) {
+  //   this.state.selectedTenants = this.state.selectedTenants.filter(tenant => {
+  //     return tenant.id != id
+  //   })
+  // }
 }
 
 export const actions = {
