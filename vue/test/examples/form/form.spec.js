@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/vue'
 import '@testing-library/jest-dom'
-import Form from './Component.vue'
+import Form from './Form.vue'
 
 // In this test we showcase several ways of targetting DOM elements.
 // However, `getByLabelText` should be your top preference when handling

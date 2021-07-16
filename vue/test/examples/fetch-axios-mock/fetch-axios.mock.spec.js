@@ -3,7 +3,7 @@ import axiosMock from 'axios'
 import { render, fireEvent } from '@testing-library/vue'
 import Component from './Component.vue'
 
-test('mocks an API call when load-greeting is clicked', async () => {
+test.skip('mocks an API call when load-greeting is clicked', async () => {
   axiosMock.get.mockImplementationOnce(() =>
     Promise.resolve({
       data: { greeting: 'hello there' },

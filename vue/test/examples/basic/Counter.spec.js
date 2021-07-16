@@ -1,9 +1,9 @@
 import { render, fireEvent } from '@testing-library/vue'
-import Component from './Component.vue'
+import Counter from './Counter.vue'
 
 test('increments value on click', async () => {
   // The render method returns a collection of utilities to query your component.
-  const { getByText } = render(Component)
+  const { getByText } = render(Counter)
 
   // getByText returns the first matching node for the provided text, and
   // throws an error if no elements match or if more than one match is found.

@@ -1,5 +1,5 @@
 import { render, waitForElementToBeRemoved } from '@testing-library/vue'
-import Disappearance from './Component.vue'
+import Disappearance from './Disappearance.vue'
 import '@testing-library/jest-dom'
 
 test('waits for the data to be loaded', async () => {

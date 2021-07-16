@@ -65,5 +65,11 @@ export default {
       return this.plants.filter((plant) => plant.isFavorite)
     },
   },
+  watch: {
+    selectedCategory(newValue, oldValue) {
+      // eslint-disable-next-line no-console
+      console.log("Category changed from " + oldValue + " to " + newValue)
+    }
+  }
 }
 </script>

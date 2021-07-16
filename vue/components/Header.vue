@@ -10,7 +10,7 @@
     <!-- <PlantsHero /> -->
     <section class="relative px-4 overflow-hidden hero h-80">
       <form
-        class="w-full mx-auto mt-12  sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl"
+        class="w-full mx-auto mt-12 sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl"
       >
         <h1 class="text-2xl font-bold title sm:text-4xl">
           Can my cat eat that?
@@ -39,10 +39,10 @@
     </section>
 
     <SvgCatLeft
-      class="absolute left-0 hidden origin-left transform scale-75  sm:left-2 lg:left-6 bottom-8 sm:block lg:scale-100 cat"
+      class="absolute left-0 hidden origin-left transform scale-75 sm:left-2 lg:left-6 bottom-8 sm:block lg:scale-100 cat"
     />
     <SvgCatRight
-      class="absolute hidden origin-right transform scale-75  sm:block -right-5 top-14 cat-right lg:scale-100"
+      class="absolute hidden origin-right transform scale-75 sm:block -right-5 top-14 cat-right lg:scale-100"
     />
   </header>
 </template>
