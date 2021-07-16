@@ -34,7 +34,7 @@ My mission is to build a small application that allows users to search and filte
 - [ ] List View
 - [ ] Grid View
 - [ ] Add and
-- [ ] Testing Library Example test
+- [ ] [Testing Library](https://testing-library.com/docs/vue-testing-library/examples/#basic-example) Example test
 - [ ] Storybook
 - [ ] Some accessibility focus
 - [ ] A few micro-interactions
@@ -56,7 +56,7 @@ My mission is to build a small application that allows users to search and filte
 
 ##### [Storybook](https://api.victortolbert.com) (Component Explorer)
 
-##### [Testing Library]() for [React]() and [Vue]()
+##### [Testing Library](https://testing-library.com/docs/) for [React](https://testing-library.com/docs/react-testing-library/example-intro) and [Vue](https://testing-library.com/docs/vue-testing-library/examples)
 
 ## Vue Build Setup
 

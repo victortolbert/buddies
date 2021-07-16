@@ -2,6 +2,6 @@
 NODE_VERSION = "14"
 
 [build]
-command = "yarn generate"
+command = "npm run build"
 ignore = "git diff --quiet HEAD^ HEAD assets components lab layouts pages static"
 publish = "dist"
