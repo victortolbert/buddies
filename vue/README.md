@@ -1,6 +1,10 @@
 # @victortolbert/buddies/vue
 
-## Features
+## What is inside?
+
+This project uses many tools like:
+
+## What is inside? (Features)
 
 - [ ] Hand-coded HTML and CSS
 - [ ] Search for plants by name through use of a search bar
@@ -19,8 +23,13 @@
 - [ ] Some accessibility improvements
 - [ ] A few micro-interactions
 - [ ] Target highlight micro-interaction
+- [TypeScript](https://www.typescriptlang.org)
+- [Jest](https://jestjs.io)
+- [Testing Library](https://testing-library.com)
+- [Eslint](https://eslint.org)
+- [Prettier](https://prettier.io)
 
-## Build Setup
+## Build Setup / Getting Started
 
 ```bash
 # install dependencies

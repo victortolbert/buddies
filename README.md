@@ -14,7 +14,7 @@ My mission is to build a small application that allows users to search and filte
 
 - [ ] Search for plants by name through use of a search bar
 - [ ] Filter non-toxic and toxic plants by using a dropdown
-- [ ] Change the view from either a grid or list
+- [x] Change the view from either a grid or list
 - [ ] Clicking on a plant image or name should show the plant’s details
 - [ ] Add and remove a plant to and from your favorites by clicking the heart icon
 - [ ] Use tabs to switch between viewing all plants and viewing your favorites
@@ -106,3 +106,22 @@ $ npm install
 # serve with hot reload at localhost:3000
 $ npm run start
 ```
+
+## What is inside?
+
+This project includes many tools like:
+
+- [VueJS](https://vuejs.org)
+- [ReactJS](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Jest](https://jestjs.io)
+- [Testing Library](https://testing-library.com)
+- [Eslint](https://eslint.org)
+- [Prettier](https://prettier.io)
+- [Storybook](https://prettier.io)
+- [Sentry](https://sentry.io/welcome/)
+- [Tailwindcss](https://tailwindcss.com)
+
+## License
+
+This project is licensed under the MIT License.
