@@ -58,8 +58,8 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit({ commit }, { $axios }) {
-    const plants = await $axios.$get('plants')
+  async nuxtServerInit({ commit }, { $axios, $store }) {
+    const plants = await $axios.$get(`plants`)
 
     commit('SET_PLANTS', plants)
   }

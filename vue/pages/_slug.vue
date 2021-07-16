@@ -1,8 +1,18 @@
 <template>
   <div>
-    <h1>{{ page.title }}</h1>
-    <p>{{ page.description }}</p>
-    <nuxt-content :document="page" />
+    <nav class="flex items-center p-6 text-white bg-black h-18">
+      <RouterLink to="/" class="brand">
+        <SvgLogoMark />
+        <span class="brand-text">Catopia!</span>
+      </RouterLink>
+    </nav>
+
+    <div class="max-w-md mx-6 mt-6">
+      <div class="prose-sm prose">
+        <p>{{ page.description }}</p>
+        <nuxt-content :document="page" />
+      </div>
+    </div>
   </div>
 </template>
 

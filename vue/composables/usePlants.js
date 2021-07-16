@@ -1,5 +1,5 @@
 import { useFetch, useContext, ref, computed } from '@nuxtjs/composition-api'
-import { strip } from '@/helpers'
+import { strip } from '~/helpers'
 
 export default function usePlants() {
   const { $axios, route } = useContext()

@@ -1,10 +1,12 @@
 export default {
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-env
   env: {
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
     apiURL: process.env.API_URL || 'http://localhost.3000/api',
     assetsURL: process.env.ASSETS_URL || 'http://localhost:3000',
   },
 
+  // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-runtime-config
   publicRuntimeConfig: {
     tmdbApiKey: process.env.TMDB_API_KEY,
   },
@@ -50,10 +52,12 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-
+    // https://composition-api.nuxtjs.org/
     '@nuxtjs/composition-api/module',
-
-    '@nuxtjs/tailwindcss'
+    // https://tailwindcss.nuxtjs.org/
+    '@nuxtjs/tailwindcss',
+    // https://github.com/nuxt-community/netlify-files-module
+    '@nuxtjs/netlify-files',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -64,9 +68,7 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-
-    '@nuxtjs/axios',
-
+    // https://sentry.nuxtjs.org/
     '@nuxtjs/sentry'
   ],
 
@@ -129,6 +131,7 @@ export default {
     linkActiveClass: 'is-active',
     linkExactActiveClass: 'is-exact-active',
   },
+
   serverMiddleware: ['~/server'],
 
   generate: {

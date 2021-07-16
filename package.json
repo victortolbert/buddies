@@ -1,0 +1,15 @@
+{
+  "name": "@victortolbert/buddies",
+  "description": "A starter project for Vue and React UI projects",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Victor Tolbert",
+    "email": "victor.tolbert@hey.com",
+    "url": "https://github.com/victortolbert"
+  },
+  "bugs": {
+    "url": "https://github.com/victortolbert/buddies/issues",
+    "email": "victor.tolbert@hey.com"
+  }
+}

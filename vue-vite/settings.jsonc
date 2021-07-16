@@ -1,0 +1,520 @@
+{
+    /**
+     * Better Defaults
+     **/
+    "editor.copyWithSyntaxHighlighting": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    // "editor.emptySelectionClipboard": false,
+    "workbench.editor.enablePreview": false,
+    "window.newWindowDimensions": "inherit",
+    // "editor.tabCompletion": "on",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.renderSideBySide": false,
+    "editor.snippetSuggestions": "top",
+    "editor.detectIndentation": false,
+    "window.nativeFullScreen": false,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "tailwindCSS.emmetCompletions": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.settings.editor": "json",
+    "editor.renderIndentGuides": false,
+    "editor.renderWhitespace": "all",
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers":"on",
+
+    /**
+     * Silence The Noise
+     */
+    "editor.codeLens": true,
+    "scm.diffDecorations": "none",
+    "editor.hover.enabled": true,
+    "editor.matchBrackets": "never",
+    "workbench.tips.enabled": true,
+    "editor.colorDecorators": true,
+    "git.decorations.enabled": true,
+    "workbench.startupEditor": "none",
+    "editor.lightbulb.enabled": true,
+    "editor.selectionHighlight": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderLineHighlight": "none",
+    "editor.occurrencesHighlight": false,
+    "problems.decorations.enabled": true,
+    "editor.renderControlCharacters": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+    "editor.fontFamily": "Input Mono condensed, Dank Mono, Dank Mono Neue, Input Mono Condensed, JetBrains Mono, Cascadia Code, Cascadia Mono PL, Operator Mono, Menlo, Monaco, Courier New, monospace",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "bold",
+    "editor.fontSize": 12,
+    "editor.lineHeight": 0,
+    "editor.suggestFontSize": 16,
+    "editor.suggestLineHeight": 28,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.lineHeight": 1.5,
+
+    /**
+     * Find
+     **/
+    "search.useIgnoreFiles": false,
+    "search.exclude": {
+      // Hide everything in /vendor, except the "laravel" and "livewire" folder.
+      "**/vendor/{[^l],?[^ai]}*": true,
+      // Hide everything in /public, except "index.php"
+      "**/public/{[^i],?[^n]}*": true,
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/_ide_helper.php": true,
+      "**/composer.lock": true,
+      "**/package-lock.json": true,
+      "storage": true,
+      ".phpunit.result.cache": true
+    },
+
+    /**
+     * Window Settings
+     **/
+    // "window.nativeTabs": true,
+    "window.titleBarStyle": "native",
+    "customizeUI.titleBar": "inline",
+    "customizeUI.stylesheet": {
+      ".editor .title": "background: transparent !important;",
+      ".editor .title .label-container": "visibility: hidden;",
+      // Hide top-right buttons
+      ".editor .title .actions-container .action-item a": "visibility: hidden;",
+      // Show top-right "settings goto icon"
+      ".editor .title .actions-container .action-item a[title=\"Open Settings (UI)\"]": "visibility: initial;",
+      ".editor .title .actions-container .action-item a[title=\"Open Settings (JSON)\"]": "visibility: initial;",
+      // Make it the "right-most" icon.
+      ".editor .title .actions-container": "flex-direction: row-reverse;",
+      // Only show the scrollbar on hover.
+      ".editor .scrollbar .slider": "visibility: hidden",
+      ".editor .scrollbar:hover .slider": "visibility: initial",
+      // Change cursor color.
+      ".monaco-editor .cursor": "background: linear-gradient(to bottom, #7f00ff, #e100ff) !important; color: #292D3E !important"
+    },
+
+    /**
+     * Code
+     **/
+    // Include "-" in word selection.
+    "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+
+    // -- evaluation 12/27/2020
+    "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+    // "emmet.triggerExpansionOnTab": true,
+
+    "emmet.includeLanguages": {
+      "blade": "html",
+      "vue-html": "html",
+      "vue": "html",
+      "postcss": "css"
+    },
+    "files.associations": {
+        ".php_cs": "php",
+        ".php_cs.dist": "php",
+        "*.md": "markdown"
+    },
+
+    /**
+     * PHP
+     **/
+    "php.suggest.basic": false,
+
+    /**
+     * PHP CS Fixer
+     **/
+    "[php]": {
+      "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "php-cs-fixer.onsave": true,
+    "php-cs-fixer.showOutput": false,
+    "php-cs-fixer.autoFixByBracket": false,
+    "php-cs-fixer.rules": "@PSR2",
+
+    /**
+     * Prettier
+     **/
+    "[csharp]": {
+      "editor.defaultFormatter": "ms-dotnettools.csharp",
+      "editor.formatOnSave": true
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "johnsoncodehk.volar",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "prettier.requireConfig": true,
+    "prettier.useEditorConfig": false,
+    // Optional BUT IMPORTANT: If you have the prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already
+    // "prettier.disableLanguages": ["javascript", "javascriptreact", "html", "yml"],
+
+    /**
+     * ESLint -- evaluation -- 12/27/2020
+     **/
+    "eslint.packageManager": "yarn",
+    "eslint.validate": [
+      "html",
+      "vue",
+      "react",
+      "javascript",
+      "typescript",
+      "javascriptreact"
+    ],
+
+    /**
+     * Vetur
+     **/
+    "vetur.format.enable": true,
+    "vetur.completion.scaffoldSnippetSources": {
+      "user": "🗒️",
+      "workspace": "💼",
+      "vetur": ""
+    },
+
+    "vetur.experimental.templateInterpolationService": true,
+
+    // Evaluation -- 12/27/2020
+    "vetur.useWorkspaceDependencies": true,
+    "vetur.validation.interpolation": true,
+    "vetur.validation.templateProps": true,
+    "vetur.validation.script": true,
+    "vetur.validation.template": true,
+    "vetur.completion.autoImport": true,
+    "vetur.format.defaultFormatter.ts": "prettier-tslint",
+    "vetur.format.defaultFormatterOptions": {
+      "js-beautify-html": {
+        "wrap_attributes": "force-expand-multiline"
+      },
+      "prettyhtml": {
+        "semi": false,
+        "singleQuote": true,
+        "printWidth": 120,
+        "trailingComma": "all"
+      }
+    },
+
+    // These are all my auto-save configs
+    "editor.formatOnSave": true,
+    // turn it off for JS and JSX, we will do this via eslint
+    // "[javascript]": {
+    //   "editor.formatOnSave": false
+    // },
+    "[javascriptreact]": {
+      //   "editor.formatOnSave": false
+    },
+    // tell the ESLint plugin to run on save
+    // "eslint.codeActionsOnSave.mode": "problems",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true,
+      // Evaluate -- 12/272020
+      // "source.organizeImports": false,
+      // "source.addMissingImports": true
+    },
+
+    // "editor.codeActionsOnSave": {},
+
+    // "editor.codeActionsOnSave": {
+    //     "source.fixAll": true,
+    //     "source.organizeImports": false,
+    //     "source.addMissingImports": true
+    // },
+
+
+    "todo-tree.tree.showScanModeButton": false,
+    "tabnine.experimentalAutoImports": true,
+    "explorer.confirmDelete": false,
+    "yaml.schemas": {
+        "file:///Users/vtolbert/.vscode/extensions/atlassian.atlascode-2.8.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "atlascode.jira.jqlList": [
+        {
+            "id": "1eab5ebf-58b1-4164-937a-3185a04354bc",
+            "enabled": true,
+            "name": "My promiseserves Issues",
+            "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+            "siteId": "91e2345c-e39a-4950-abb9-81807480cef8",
+            "monitor": true
+        }
+    ],
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    // "workbench.settings.useSplitJSON": true,
+
+    // "tighten-lint.exec": "/usr/bin/tlint",
+    // "tighten-lint.defaultSeverity": "warning",
+    // "tighten-lint.only": [
+    //     "AlphabeticalImports",
+    //     "NoInlineVarDocs",
+    //     "ImportFacades"
+    // ],
+    // "tighten-lint.severities": {
+    //     "NoInlineVarDocs": "info"
+    // },
+
+    "sql-formatter.uppercase": true,
+    "atlascode.jira.lastCreateSiteAndProject": {
+        "siteId": "849cfa54-9896-46d4-900e-1369d67f3fb3",
+        "projectKey": "LAB"
+    },
+
+    // TODO+
+    "todo.symbols.box": "-",
+    "todo.symbols.done": "-",
+    "todo.symbols.cancelled": "-",
+
+    // Git settings
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+
+    "errorLens.enabledDiagnosticLevels": [
+      "error",
+      "warning",
+      "hint"
+    ],
+
+    "scss.validate": false,
+    "css.validate": false,
+    "css.lint.unknownAtRules": "ignore",
+    "scss.lint.unknownAtRules": "ignore",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    "turboConsoleLog.addSemicolonInTheEnd": false,
+    "turboConsoleLog.quote": "'",
+    "turboConsoleLog.wrapLogMessage": false,
+    "turboConsoleLog.insertEnclosingClass": false,
+    "turboConsoleLog.insertEnclosingFunction": true,
+    "turboConsoleLog.includeFileNameAndLineNum": false,
+    "turboConsoleLog.logMessagePrefix": "",
+    "turboConsoleLog.delimiterInsideMessage": " 👻 ",
+    "vsicons.dontShowNewVersionMessage": true,
+    "extensions.ignoreRecommendations": true,
+    "cSpell.language": "en,vi",
+    "cSpell.enabledLanguageIds": [
+      "css",
+      "vue",
+      "vue-html",
+      "graphql",
+      "html",
+      "javascript",
+      "markdown",
+      "scss",
+      "text",
+      "typescript",
+      "yaml",
+      "yml"
+    ],
+
+    "cSpell.ignoreWords": [
+        "nestjs",
+        "nuxtjs",
+        "chakra",
+        "nuxt",
+        "fortawesome"
+    ],
+
+    "cSpell.ignorePaths": [
+        "**/package-lock.json",
+        "**/yarn-lock.json",
+        "**/node_modules/**",
+        "node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/objects/**",
+        "coverage",
+        ".dist",
+        ".nuxt",
+        ".vscode",
+        ".vscode-insiders"
+    ],
+
+    "cSpell.languageSettings": [
+        {
+          "languageId": "vue",
+          "dictionaries": [
+            "html",
+            "vue-html",
+            "css",
+            "typescript"
+          ]
+        },
+        {
+          "languageId": "vue-html",
+          "dictionaries": [
+            "html",
+            "vue-html",
+            "css",
+            "typescript"
+          ]
+        },
+        {
+          "languageId": "typescript",
+          "dictionaries": [
+            "typescript",
+            "node"
+          ]
+        }
+      ],
+
+      "screencastMode.fontSize": 30,
+      "screencastMode.verticalOffset": 10,
+
+      "zenMode.hideLineNumbers": false,
+
+      "editor.quickSuggestions": {
+        "other": true,
+        "strings": true,
+        "comments": false
+    },
+
+    // "editor.snippetSuggestions": "inline",
+    // "editor.suggestSelection": "recentlyUsed",
+    "editor.linkedEditing": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.semanticHighlighting.enabled": "configuredByTheme",
+    // "editor.tabSize": 4,
+    // "editor.rulers": [
+    //   150
+    // ],
+    "liveServer.settings.donotShowInfoMsg": true,
+    "cSpell.userWords": [
+        "composables",
+        "laravel",
+        "postcss",
+        "tailwindcss",
+        "vite",
+        "vuex"
+    ],
+    "workbench.editor.decorations.colors":true,
+    "workbench.editor.decorations.badges":true,
+    "search.mode":"view",
+    "workbench.editor.showTabs": false,
+    "workbench.editor.wrapTabs": true,
+    "workbench.editorAssociations": {
+      "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "emmet.triggerExpansionOnTab": true,
+    "editor.suggest.showStatusBar": true,
+    "editor.suggest.insertMode": "insert",
+    "javascript.suggest.names":false,
+    "editor.wordBasedSuggestions": false,
+    "editor.links": true,
+    // "files.autoSave": "afterDelay",
+    // "files.autoSaveDelay": 3000,
+    "files.hotExit": "onExitAndWindowClose",
+    "workbench.sideBar.location": "right",
+    "grammarly.ignore": [
+        "**/node_modules/**/*",
+        "**/package.json",
+    ],
+    "grammarly.severity": {
+      "Fragment": 2 // Sets Fragment category to Warning.
+    },
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "editor.wordWrap": "off",
+    "workbench.productIconTheme": "icons-carbon",
+    "editor.tabSize": 2,
+    "editor.autoIndent": "none",
+    "omnisharp.path": "latest",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+
+
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.formatOnSave": true,
+  // "editor.detectIndentation": true,
+  // "editor.fontFamily": "'Dank Mono', Menlo, Monaco, 'Courier New', monospace",
+  // "editor.fontLigatures": false,
+  // "editor.rulers": [80],
+  // "editor.snippetSuggestions": "top",
+  // "editor.wordBasedSuggestions": false,
+  // "editor.suggest.localityBonus": true,
+  // "editor.acceptSuggestionOnCommitCharacter": false,
+  // "[javascript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  //   "editor.suggestSelection": "recentlyUsed",
+  //   "editor.suggest.showKeywords": false
+  // },
+  // "editor.renderWhitespace": "boundary",
+  // "files.exclude": {
+  //   "USE_GITIGNORE": true
+  // },
+  // "files.defaultLanguage": "{activeEditorLanguage}",
+  // "javascript.validate.enable": false,
+  // "search.exclude": {
+  //   "**/node_modules": true,
+  //   "**/bower_components": true,
+  //   "**/coverage": true,
+  //   "**/dist": true,
+  //   "**/build": true,
+  //   "**/.build": true,
+  //   "**/.gh-pages": true
+  // },
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": false
+  // },
+  // "eslint.validate": [
+  //   "javascript",
+  //   "javascriptreact",
+  //   "typescript",
+  //   "typescriptreact"
+  // ],
+  // "eslint.options": {
+  //   "env": {
+  //     "browser": true,
+  //     "jest/globals": true,
+  //     "es6": true
+  //   },
+  //   "parserOptions": {
+  //     "ecmaVersion": 2019,
+  //     "sourceType": "module",
+  //     "ecmaFeatures": {
+  //       "jsx": true
+  //     }
+  //   },
+  //   "rules": {
+  //     "no-debugger": "off"
+  //   }
+  // },
+  // "breadcrumbs.enabled": true,
+  // "grunt.autoDetect": "off",
+  // "gulp.autoDetect": "off",
+  // "npm.runSilent": true,
+  // "explorer.confirmDragAndDrop": false,
+  // "editor.formatOnPaste": false,
+  // "editor.cursorSmoothCaretAnimation": true,
+  // "editor.smoothScrolling": true,
+  }
