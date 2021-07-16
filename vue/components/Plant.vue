@@ -14,7 +14,10 @@
   export default {
     name: "Plant",
     props: {
-
+      plant: {
+        type: Object,
+        default: () => ({})
+      }
     },
     setup({ plant }) {
       const altText = computed(() => `The plant name: ${plant.names.common}`);

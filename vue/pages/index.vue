@@ -26,6 +26,11 @@
 
 <script>
 export default {
+  asyncData({ route, store, query }) {
+    console.log({ route, store, query})
+
+    // console.log(route.query.name);
+  },
   data() {
     return {
       plants: [],
@@ -34,6 +39,7 @@ export default {
     }
   },
   async fetch() {
+    // Called also on query changes
     const { data } = await this.$axios.get('plants')
     this.plants = data.map((plant) => {
       return {
@@ -66,6 +72,7 @@ export default {
     },
   },
   watch: {
+    '$route.query': '$fetch',
     selectedCategory(newValue, oldValue) {
       // eslint-disable-next-line no-console
       console.log("Category changed from " + oldValue + " to " + newValue)

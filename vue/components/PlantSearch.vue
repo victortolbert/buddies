@@ -3,6 +3,7 @@
     <Search :search="state.search" @search="handleSearch" />
 
     <p class="intro">Sharing a few of our favorite plants</p>
+    <!-- <pre>{{ state.plants }}</pre> -->
 
     <div class="plants">
       <Plant v-for="plant in state.plants" :key="plant.id" :plant="plant" />

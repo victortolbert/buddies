@@ -1,4 +1,4 @@
-import { reactive, watch } from '@vue/composition-api';
+import { reactive, watchEffect } from '@vue/composition-api';
 
 export const usePlantApi = () => {
   const state = reactive({
@@ -13,8 +13,8 @@ export const usePlantApi = () => {
     fetch(PLANT_API_URL)
       .then(response => response.json())
       .then(jsonResponse => {
-        state.plants = jsonResponse.Search;
-        state.plants = jsonResponse.Search;
+        state.plants = jsonResponse;
+        // state.plants = jsonResponse.Search;
         state.loading = false;
       });
   });
