@@ -23,11 +23,6 @@ This project uses many tools like:
 - [ ] Some accessibility improvements
 - [ ] A few micro-interactions
 - [ ] Target highlight micro-interaction
-- [TypeScript](https://www.typescriptlang.org)
-- [Jest](https://jestjs.io)
-- [Testing Library](https://testing-library.com)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io)
 
 ## Build Setup / Getting Started
 
