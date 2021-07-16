@@ -59,6 +59,7 @@ My mission is to build a small application that allows users to search and filte
 - [Functional Components](https://reactjs.org/docs/components-and-props.html)
 - [Styled Components](https://styled-components.com/docs/basics#getting-started)
 - [CSS Modules](https://github.com/css-modules/css-modules#readme)
+- [Remotion](https://www.remotion.dev/)
 
 ##### [Storybook](https://api.victortolbert.com) (Component Explorer)
 

@@ -70,3 +70,27 @@ $ npm run generate
 - Select
 - Switch
 - Tabs
+
+## Example JSON-Server API endpoints
+
+- <https://api.victortolbert.com/plants?q=aloe%20vera>
+- <https://api.victortolbert.com/plants?toxicity.symptoms_like=vomiting>
+- <https://api.victortolbert.com/plants?toxicity.symptoms_like=diarrhea>
+- <https://api.victortolbert.com/plants?names.common_like=aloe>
+- <https://api.victortolbert.com/plants?names.scientific_like=ficus>
+- <https://api.victortolbert.com/plants?names.common_like=aloe&author=typicode>
+- <https://api.victortolbert.com/plants?id=1&id=2>
+- <https://api.victortolbert.com/plants?_start=20&_end=30>
+- <https://api.victortolbert.com/plants?_start=20&_limit=10>
+- <https://api.victortolbert.com/plants?_page=1&_limit=2>
+- <https://api.victortolbert.com/plants?_page=7>
+- <https://api.victortolbert.com/plants?id_ne=1>
+- <https://api.victortolbert.com/plants?id_gte=2&id_lte=4>
+- <https://api.victortolbert.com/plants?views_gte=10&views_lte=20>
+- <https://api.victortolbert.com/plants?names.common=aloe>
+- <https://api.victortolbert.com/plants?names.scientific=aloe>
+- <https://api.victortolbert.com/plants?_sort=names.common&_order=asc>
+- <https://api.victortolbert.com/plants?_sort=names.scientific&_order=asc>
+
+
+- <https://api.victortolbert.com/plants/1/comments?_sort=votes&_order=asc>
