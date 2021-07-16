@@ -13,6 +13,7 @@ declare module 'vue' {
     MyComponent: typeof import('./src/components/MyComponent.vue')['default']
     MyDialog: typeof import('./src/components/MyDialog.vue')['default']
     MyDisclosure: typeof import('./src/components/MyDisclosure.vue')['default']
+    MyForm: typeof import('./src/components/MyForm.vue')['default']
     MyListbox: typeof import('./src/components/MyListbox.vue')['default']
     MyMenuButton: typeof import('./src/components/MyMenuButton.vue')['default']
     MyPopover: typeof import('./src/components/MyPopover.vue')['default']

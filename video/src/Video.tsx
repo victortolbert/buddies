@@ -15,7 +15,7 @@ export const RemotionVideo: React.FC = () => {
 				width={1920}
 				height={1080}
 				defaultProps={{
-					titleText: 'Welcome to Remotion',
+					titleText: 'Welcome to Catopia!',
 					titleColor: 'black',
 				}}
 			/>
@@ -35,7 +35,7 @@ export const RemotionVideo: React.FC = () => {
 				width={1920}
 				height={1080}
 				defaultProps={{
-					titleText: 'Welcome to Remotion',
+					titleText: 'Welcome to Catopia™!',
 					titleColor: 'black',
 				}}
 			/>
