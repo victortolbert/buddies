@@ -1,4 +1,4 @@
-# @victortolbert/buddies
+# 💎 @victortolbert/buddies
 
 ## Coding Challenge (Can My Cat Eat That?)
 
@@ -6,9 +6,15 @@ I've been contracted, and asked by the CEO of Catopia&trade; to build their late
 
 My mission is to build a small application that allows users to search and filter through common house plants to see if it’s safe for their pet to take a nibble.
 
-**Preview URL**
+**Reference Preview URLs**
 
-- <https://buddies.designcoder.net>
+| Site                           | URL                                 |
+| ------------------------------ | ----------------------------------- |
+| Vue                            | <https://vuejs.designcoder.net>     |
+| React                          | <https://react.designcoder.net>     |
+| Storybook (Component Explorer) | <https://storybook.designcoder.net> |
+| Design Tokens                  | <https://tokens.designcoder.net>    |
+| Mock API                       | <https://api.designcoder.net>       |
 
 ## Requirements
 
