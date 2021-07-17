@@ -9,7 +9,7 @@
         >
           <td class="table-cell">
             <DetailButton>
-              <img class="avatar" :src="require(`~/assets/${plant.image}`)" />
+              <img class="avatar" :src="`/assets/${plant.image}`" />
             </DetailButton>
           </td>
 

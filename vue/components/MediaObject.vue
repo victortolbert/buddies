@@ -2,13 +2,8 @@
   <div>
     <div class="flex flex-col sm:flex-row sm:items-center">
       <div class="flex items-center flex-shrink-0">
-        <!-- <Avatar class="w-32 h-32" :image="image" /> -->
         <DetailButton>
-          <img
-            class="inline-block w-32 h-32 rounded-full sm:w-12 sm:h-12"
-            :src="require(`~/assets/${plant.image}`)"
-            alt=""
-          />
+          <Avatar class="w-32 h-32" :image="plant.image" />
         </DetailButton>
       </div>
 

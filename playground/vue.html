@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Playground</title>
+    <link rel="stylesheet" href="https://preview.oruga.io/cdn/oruga.min.css" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@vue/composition-api@1.0.0-rc.10"></script>
+    <script src="https://unpkg.com/@vueuse/shared"></script>
+    <script src="https://unpkg.com/@vueuse/core"></script>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+    <script src="https://preview.oruga.io/cdn/oruga.min.js"></script>
+</head>
+<body>
+    <div id="app">
+
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="px-4 py-12 sm:px-6 lg:px-8">
+  <nav class="flex justify-center" aria-label="Progress">
+    <ol class="space-y-6">
+      <li v-for="(step, key) in steps">
+        <a v-if="step.status == 'complete'" href="#" class="group">
+          <span class="flex items-start">
+            <span class="relative flex items-center justify-center flex-shrink-0 w-5 h-5">
+              <!-- Heroicon name: solid/check-circle -->
+              <svg class="w-full h-full text-indigo-600 group-hover:text-indigo-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+            </span>
+            <span class="ml-3 text-sm font-medium text-gray-500 group-hover:text-gray-900">{{ step.name }}</span>
+          </span>
+        </a>
+        <a v-if="step.status == 'current'" href="#" class="flex items-start" aria-current="step">
+          <span class="relative flex items-center justify-center flex-shrink-0 w-5 h-5" aria-hidden="true">
+            <span class="absolute w-4 h-4 bg-indigo-200 rounded-full"></span>
+            <span class="relative block w-2 h-2 bg-indigo-600 rounded-full"></span>
+          </span>
+          <span class="ml-3 text-sm font-medium text-indigo-600">{{ step.name }}</span>
+        </a>
+        <a v-if="step.status == 'upcoming'" href="#" class="group">
+          <div class="flex items-start">
+            <div class="relative flex items-center justify-center flex-shrink-0 w-5 h-5" aria-hidden="true">
+              <div class="w-2 h-2 bg-gray-300 rounded-full group-hover:bg-gray-400"></div>
+            </div>
+            <p class="ml-3 text-sm font-medium text-gray-500 group-hover:text-gray-900">{{ step.name }}</p>
+          </div>
+        </a>
+      </li>
+    </ol>
+  </nav>
+</div>
+
+    </div>
+
+    <script type="module" >
+        import tailwindcssTypography from 'https://cdn.skypack.dev/@tailwindcss/typography';
+
+        window.tailwindConfig = {
+            plugins: [
+                tailwindcssTypography,
+            ]
+        };
+
+        window.tailwindCSS.refresh();
+    </script>
+    <script type="tailwind-config">
+    window.tailwindConfig
+    </script>
+    <script>
+        var app = new Vue({
+          el: '#app',
+          data: {
+            steps: {
+              1: { name: 'Create Account', status: 'complete' },
+              2: { name: 'Profile Information', status: 'current' },
+              3: { name: 'Theme', status: 'current' },
+              4: { name: 'Preview', status: 'upcoming' },
+            }
+          }
+        })
+    </script>
+</body>
+</html>

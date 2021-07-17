@@ -1,0 +1,79 @@
+
+
+Company	Id
+Company	AdjusterDirectorId
+Company	AdjusterManagerId
+Company	AdjusterReceivesBill
+Company	BillingContactId
+Company	City
+Company	Comments
+Company	CreatedBy
+Company	CreatedOn
+Company	FullName
+Company	IsActive
+Company	ParentId
+Company	PostalCode
+Company	ProcessingByGeomni
+Company	ShortName
+Company	StateId
+Company	StreetAddress1
+Company	StreetAddress2
+Company	RowVersion
+Company	HoverWalletId
+Company	AssetEmailRecipients
+Company	HasCustomAssetEmail
+Company	OnExternalForm
+Company	MaxMailSize
+
+CompanyCarrier	Id
+CompanyCarrier	AlacrityCarrier
+CompanyCarrier	CompanyId
+CompanyCarrier	PhoneNumber
+CompanyCarrier	StateId
+CompanyCarrier	XactwareCarrier
+CompanyCarrier	RowVersion
+
+CompanyEmailDomain	Id
+CompanyEmailDomain	CompanyId
+CompanyEmailDomain	CreatedBy
+CompanyEmailDomain	CreatedOn
+CompanyEmailDomain	Domain
+CompanyEmailDomain	RowVersion
+
+CompanyNotification	CompanyId
+CompanyNotification	NotificationTypeId
+CompanyNotification	SendToAdjuster
+
+CompanyNotificationRecipient	CompanyId
+CompanyNotificationRecipient	RecipientEmail
+CompanyNotificationRecipient	NotificationTypeId
+
+CompanyServiceType	AvailableServiceTypeId
+CompanyServiceType	CompanyId
+CompanyServiceType	BillingPrice
+CompanyServiceType	CreatedBy
+CompanyServiceType	CreatedOn
+CompanyServiceType	GeomniServiceType
+CompanyServiceType	HasDescription
+CompanyServiceType	IsHoverEnabled
+CompanyServiceType	IsActive
+CompanyServiceType	IsDeleted
+CompanyServiceType	LaborCost
+CompanyServiceType	RowVersion
+CompanyServiceType	IsLivegenicEnabled
+CompanyServiceType	HoverReportTypeId
+CompanyServiceType	IsEagleViewEnabled
+CompanyServiceType	OnExternalForm
+
+CompanyUser	CompanyId
+CompanyUser	UserId
+CompanyUser	CreatedBy
+CompanyUser	CreatedOn
+
+CustomerEmailAccount	Id
+CustomerEmailAccount	CompanyId
+CustomerEmailAccount	CreatedBy
+CustomerEmailAccount	CreatedOn
+CustomerEmailAccount	Description
+CustomerEmailAccount	Email
+CustomerEmailAccount	IsActive

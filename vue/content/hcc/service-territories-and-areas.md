@@ -1,0 +1,67 @@
+ServiceArea	Id
+ServiceArea	AddressLatitude
+ServiceArea	AddressLongitude
+ServiceArea	City
+ServiceArea	CreatedBy (FK_ServiceArea_User_CreatedBy)
+ServiceArea	CreatedOn
+ServiceArea	IsActive
+ServiceArea	IsCatastropheArea
+ServiceArea	IsDeleted
+ServiceArea	Latitude
+ServiceArea	Longitude
+ServiceArea	Name
+ServiceArea	PostalCode
+ServiceArea	Radius
+ServiceArea	ServiceRegionId (FK_ServiceArea_ServiceRegion_ServiceRegionId)
+ServiceArea	StateId (FK_ServiceArea_State_StateId)
+ServiceArea	StreetAddress
+ServiceArea	TimeZoneId (FK_ServiceArea_Timezone_TimeZoneId)
+
+ServiceAreaAvailabilities	Id
+ServiceAreaAvailabilities	WindowStart
+ServiceAreaAvailabilities	WindowEnd
+
+ServiceAreaCapacity	Id
+ServiceAreaCapacity	Capacity
+ServiceAreaCapacity	CompanyId (FK_ServiceAreaCapacity_Company_CompanyId)
+ServiceAreaCapacity	CreatedBy (FK_ServiceAreaCapacity_User_CreatedBy)
+ServiceAreaCapacity	CreatedOn
+ServiceAreaCapacity	EndTime
+ServiceAreaCapacity	StartTime
+ServiceAreaCapacity	ServiceAreaId (FK_ServiceAreaCapacity_ServiceArea_ServiceAreaId)
+
+ServiceAreaPostalCode	Id
+ServiceAreaPostalCode	PostalCode
+ServiceAreaPostalCode	ServiceAreaId (FK_ServiceAreaPostalCode_ServiceArea_ServiceAreaId)
+
+ServiceAreaTechnician	ServiceAreaId (FK_ServiceAreaTechnician_ServiceArea_ServiceAreaId)
+ServiceAreaTechnician	UserId (FK_ServiceAreaTechnician_User_UserId)
+ServiceAreaTechnician	CreatedBy (FK_ServiceAreaTechnician_User_CreatedBy)
+ServiceAreaTechnician	CreatedOn
+ServiceAreaTechnician	RowVersion
+
+ServiceRegion	Id
+ServiceRegion	CreatedBy (FK_ServiceRegion_User_CreatedBy)
+ServiceRegion	CreatedOn
+ServiceRegion	IsActive
+ServiceRegion	IsCatastropheRegion
+ServiceRegion	IsDeleted
+ServiceRegion	Name
+ServiceRegion	RegionLead
+ServiceRegion	RowVersion
+
+ServiceRegionManager	ServiceRegionId (FK_ServiceRegionManager_ServiceRegion_ServiceRegionId)
+ServiceRegionManager	UserId (FK_ServiceRegionManager_User_UserId)
+ServiceRegionManager	CreatedBy (FK_ServiceRegionManager_User_CreatedBy)
+ServiceRegionManager	CreatedOn
+ServiceRegionManager	RowVersion
+
+
+FieldTechAvailability	Id
+FieldTechAvailability	CreatedBy (FK_FieldTechAvailability_User_CreatedBy)
+FieldTechAvailability	CreatedOn ()
+FieldTechAvailability	EndDate
+FieldTechAvailability	FieldTechUserId (FK_FieldTechAvailability_User_FieldTechUserId)
+FieldTechAvailability	IsAvailable
+FieldTechAvailability	ServiceAreaId (FK_FieldTechAvailability_ServiceArea_ServiceAreaId)
+FieldTechAvailability	StartDate

@@ -1,54 +1,63 @@
 ---
-title: About
-project: Buddies
+title: Buddies
+project: buddies
+description: Platform-agnostic User Interface Prototyping Toolkit
 ---
-
-## What
-
-I've been contracted, and been asked by the CEO of Catopia to build their latest product:
-
-My mission is to build a small application that allows users to search and filter through common house plants to see if it’s safe for their pet to take a nibble.
 
 ## Features
 
-- [] Hand-coded HTML and CSS
-- [] Search for plants by name through use of a search bar
-- [] Filter non-toxic and toxic plants by using a dropdown
-- [] Change the view from either a grid or list
-- [] Clicking on a plant image or name should show the plant’s details
-- [] Detail Slide Over
-- [] Detail Modal
-- [] Detail Page Route
-- [] Favorite View
-- [] List View
-- [] Grid View
-- [] Add and
-- [] Testing Library Example test
-- [] Storybook
-- [] Node / Express / JSON-Server API Mocking
-- [] Some accessibility improvements
-- [] A few microinteractions
+- [ ] Search for plants by name through use of a search bar
+- [ ] Filter non-toxic and toxic plants by using a dropdown
+- [ ] Change the view from either a grid or list
+- [ ] Click on a plant image or name to show the plant’s details
 
-## Creative Technologist Role
+## Components
 
-The challenge step of the Creative Technologist hiring process for the Design Systems team.
+- [ ] Avatar
+- [ ] Button
+- [ ] Card
+- [ ] Grid (gallery)
+- [ ] Hero
+- [ ] Icon
+- [ ] Image
+- [ ] Field
+- [ ] List
+- [ ] MediaObject
+- [ ] Modal
+- [ ] Navbar
+- [ ] SearchInput
+- [ ] SlideOver
+- [ ] Svg
+- [ ] Table
 
-The goal of this exercise is to help the team understand how I might best fit into the team.
+## Tooling
 
-## Technology
+- [ ] **Testing Library**
+- [ ] **Storybook** Tooling for developing UI components in isolation
+- [ ] **JSON-Server** NodeJS Express for API mocking
+- [ ] **Tailwind** NodeJS Express for API mocking
 
-- HTML, CSS, JS, VUE (and some React)
-- Reproduce (and better yet, elevate) the provided design
-- The quality and structure of your codebase
 
-## Data
+## Tools
 
-- Names (Common and scientific)
-- Description
-- Toxic properties and symptoms (if toxic)
-- Care (light and water)
+- [ ] **Jest**
+- [ ] **Testing Library**
+- [ ] **Storybook**
+- [ ] **JSON Server**
 
-## Assets
+## Build Setup
 
-- Figma file
-- Compressed Images
+```bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
+```

@@ -1,0 +1,67 @@
+[
+  {
+    "Id": 1,
+    "Name": "Administrator",
+    "UserTypeId": 1
+  },
+  {
+    "Id": 2,
+    "Name": "Scheduler",
+    "UserTypeId": 1
+  },
+  {
+    "Id": 3,
+    "Name": "Admin Support",
+    "UserTypeId": 1
+  },
+  {
+    "Id": 4,
+    "Name": "Bookkeeper",
+    "UserTypeId": 1
+  },
+  {
+    "Id": 5,
+    "Name": "Service Tech",
+    "UserTypeId": 2
+  },
+  {
+    "Id": 6,
+    "Name": "Service Tech 2",
+    "UserTypeId": 2
+  },
+  {
+    "Id": 7,
+    "Name": "Service Manager",
+    "UserTypeId": 2
+  },
+  {
+    "Id": 8,
+    "Name": "Insurance Adjuster",
+    "UserTypeId": 3
+  },
+  {
+    "Id": 9,
+    "Name": "Billing Contact",
+    "UserTypeId": 3
+  },
+  {
+    "Id": 10,
+    "Name": "Adjuster Director",
+    "UserTypeId": 3
+  },
+  {
+    "Id": 11,
+    "Name": "Adjuster Manager",
+    "UserTypeId": 3
+  },
+  {
+    "Id": 12,
+    "Name": "Service Director",
+    "UserTypeId": 2
+  },
+  {
+    "Id": 13,
+    "Name": "EagleView",
+    "UserTypeId": 4
+  }
+]

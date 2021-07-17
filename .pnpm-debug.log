@@ -1,0 +1,14 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "code": "ERR_PNPM_NO_IMPORTER_MANIFEST_FOUND",
+    "err": {
+      "name": "Error",
+      "message": "No package.json (or package.yaml, or package.json5) was found in \"/Users/victortolbert/Code/victortolbert/buddies\".",
+      "code": "ERR_PNPM_NO_IMPORTER_MANIFEST_FOUND",
+      "stack": "Error: No package.json (or package.yaml, or package.json5) was found in \"/Users/victortolbert/Code/victortolbert/buddies\".\n    at readProjectManifest (/Users/victortolbert/.nvm/versions/node/v14.17.3/pnpm-global/5/node_modules/.pnpm/pnpm@6.10.2/node_modules/pnpm/dist/pnpm.cjs:39783:13)\n    at async Object.readProjectManifestOnly (/Users/victortolbert/.nvm/versions/node/v14.17.3/pnpm-global/5/node_modules/.pnpm/pnpm@6.10.2/node_modules/pnpm/dist/pnpm.cjs:39787:28)\n    at async Object.readProjectManifestOnly (/Users/victortolbert/.nvm/versions/node/v14.17.3/pnpm-global/5/node_modules/.pnpm/pnpm@6.10.2/node_modules/pnpm/dist/pnpm.cjs:40006:24)\n    at async Object.handler (/Users/victortolbert/.nvm/versions/node/v14.17.3/pnpm-global/5/node_modules/.pnpm/pnpm@6.10.2/node_modules/pnpm/dist/pnpm.cjs:122803:24)\n    at async /Users/victortolbert/.nvm/versions/node/v14.17.3/pnpm-global/5/node_modules/.pnpm/pnpm@6.10.2/node_modules/pnpm/dist/pnpm.cjs:126856:20\n    at async run (/Users/victortolbert/.nvm/versions/node/v14.17.3/pnpm-global/5/node_modules/.pnpm/pnpm@6.10.2/node_modules/pnpm/dist/pnpm.cjs:126831:34)\n    at async runPnpm (/Users/victortolbert/.nvm/versions/node/v14.17.3/pnpm-global/5/node_modules/.pnpm/pnpm@6.10.2/node_modules/pnpm/dist/pnpm.cjs:127041:5)\n    at async /Users/victortolbert/.nvm/versions/node/v14.17.3/pnpm-global/5/node_modules/.pnpm/pnpm@6.10.2/node_modules/pnpm/dist/pnpm.cjs:127033:7"
+    }
+  }
+}

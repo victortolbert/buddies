@@ -1,0 +1,99 @@
+Project	Id
+Project	AddressComments
+Project	AddressLatitude
+Project	AddressLongitude
+Project	AdjusterAssignedOn
+Project	AdjusterId (FK_Project_User_AdjusterId)
+Project	AdjusterProjectNumber
+Project	BilledOn
+Project	BillingContactId (FK_Project_User_BillingContactId)
+Project	BillingResultMessage
+Project	BillingStatusId (FK_Project_BillingStatusType_BillingStatusId)
+Project	CatastrophicEvent
+Project	City
+Project	ClaimComments
+Project	ClaimId (FK_Project_Claim_ClaimId)
+Project	CompanyId (FK_Project_Company_CompanyId)
+Project	CreatedBy (FK_Project_User_CreatedBy)
+Project	CreatedOn
+Project	DialerSkillId
+Project	DialerStatus
+Project	FlaggedBy (FK_Project_User_FlaggedBy)
+Project	InsuredEmail
+Project	InsuredFirstName
+Project	InsuredLastName
+Project	InsuredPrimaryPhone
+Project	InsuredSecondaryPhone
+Project	IsMultipleAssign
+Project	IsReinspect
+Project	IsTimeWindow
+Project	MasterFormBackUp
+Project	MultiUnit
+Project	Notes
+Project	OtherServiceType
+Project	OtherServiceTypeDescription
+Project	OtherServiceTypePrice
+Project	PostalCode
+Project	ProjectNumber
+Project	ProjectSourceId (FK_Project_ProjectSource_ProjectSourceId)
+Project	ProjectStatusId (FK_Project_ProjectStatus_ProjectStatusId)
+Project	ReadBySvt
+Project	RequiresHaagInspector
+Project	SkipGeomniProcessing
+Project	StateId (FK_Project_State_StateId)
+Project	StreetAddress1
+Project	StreetAddress2
+Project	TimeWindowDuration
+Project	TimeWindowEnd
+Project	TimeWindowStart
+Project	EscalationResolutionDescription
+Project	IsEscalation
+Project	IsReschedule
+Project	RescheduleReasonTypeId (FK_Project_MasterRescheduleReasonType_RescheduleReasonTypeId)
+Project	EscalationReasonTypeId (FK_Project_MasterEscalationReasonType_EscalationReasonTypeId)
+Project	BillingContactType
+Project	ContactDateTime
+Project	ContactedByUserId (FK_Project_User_ContactedByUserId)
+Project	HasBeenContacted
+
+ProjectComment	Id
+ProjectComment	CommentText
+ProjectComment	CreatedBy (FK_ProjectComment_User_CreatedBy)
+ProjectComment	CreatedOn
+ProjectComment	IsSeenByOthers
+ProjectComment	ProjectId (FK_ProjectComment_Project_ProjectId)
+
+
+ProjectDamageType	DamageTypeId
+ProjectDamageType	ProjectId (FK_ProjectDamageType_Project_ProjectId)
+ProjectDamageType	OtherInspection
+
+ProjectInspection	Id
+ProjectInspection	Assignable
+ProjectInspection	CreatedBy (FK_ProjectInspection_User_CreatedBy)
+ProjectInspection	CreatedOn
+ProjectInspection	Duration
+ProjectInspection	ProjectId (FK_ProjectInspection_Project_ProjectId)
+ProjectInspection	ScheduleDate
+ProjectInspection	ServiceAreaId (FK_ProjectInspection_ServiceArea_ServiceAreaId)
+ProjectInspection	ServiceRegionId (FK_ProjectInspection_ServiceRegion_ServiceRegionId)
+ProjectInspection	AssignedRoute
+ProjectInspection	RowVersion
+ProjectInspection	IsLivegenicInspection
+
+ProjectInspectionTechnician	ProjectInspectionId (FK_ProjectInspectionTechnician_ProjectInspection_ProjectInspectionId)
+ProjectInspectionTechnician	UserId (FK_ProjectInspectionTechnician_User_UserId)
+ProjectInspectionTravelTime	ProjectInspection1Id
+ProjectInspectionTravelTime	ProjectInspection2Id
+ProjectInspectionTravelTime	TimeInMinutes
+ProjectInspectionTravelTime	CreatedOn
+
+ProjectLogItem	Id
+ProjectLogItem	ChangeDate
+ProjectLogItem	ChangedProperties
+ProjectLogItem	CreatedBy (FK_ProjectLogItem_User_CreatedBy)
+ProjectLogItem	CreatedOn
+ProjectLogItem	Description
+ProjectLogItem	ProjectId (FK_ProjectLogItem_Project_ProjectId)
+ProjectLogItem	ProjectStatusId (FK_ProjectLogItem_ProjectStatus_ProjectStatusId)
+ProjectLogItem	UserId FK_ProjectLogItem_User_UserId
