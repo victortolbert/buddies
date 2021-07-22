@@ -122,11 +122,11 @@ export default {
     fallback: true,
   },
 
-  sentry: {
-    dsn: 'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
-    config: {
-      maxBreadcrumbs: 50,
-      debug: false,
-    },
-  },
+  // sentry: {
+  //   dsn: 'https://c30dc69c78434050aed6f64b97cbd645@o244691.ingest.sentry.io/1422222',
+  //   config: {
+  //     maxBreadcrumbs: 50,
+  //     debug: false,
+  //   },
+  // },
 }

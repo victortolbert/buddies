@@ -4,7 +4,7 @@
       <Navbar />
 
       <section class="hero">
-        <form class="form" @submit.prevent="fetch">
+        <form class="form" @submit.prevent="fetchPlants">
           <h1 class="title">Can my cat eat that?</h1>
 
           <h2 class="subtitle">
@@ -37,9 +37,8 @@
       Sorry, but no plants matched your search criteria
     </section> -->
 
-    <section v-if="fetchState.pending" class="section">
+    <section v-if="isLoading" class="section">
       <i>Searching...</i>
-      {{ fetchState }}
     </section>
 
     <section v-if="$store.state.ui.activeView === 'list'" class="section">
@@ -53,33 +52,67 @@
 </template>
 
 <script>
-import usePlants from '~/composables/usePlants'
-
+import { mapGetters, mapActions } from 'vuex'
 export default {
-  setup() {
-    const {
-      fetch,
-      fetchState,
-      isLoading,
-      query,
-      visibility,
-      plants,
-      filteredPlants,
-    } = usePlants()
+  data: () => ({
+    query: 'yo',
+    limit: 20,
+    plants: [],
+    showFavorites: false,
+    noPlants: false,
+    isLoading: false,
+    error: null,
+    visibility: 'all',
+  }),
+  computed: {
+    ...mapGetters('plants', ['filteredPlants']),
+  },
+  async mounted() {
+    // await this.fetchPlants()
+    await this.$store.dispatch('plants/initPlants', this.query)
+  },
+  methods: {
+    // ...mapActions('plants', ['fetchPlants']),
 
-    return {
-      filteredPlants,
-      plants,
-      query,
-      visibility,
-      isLoading,
-      fetch,
-      fetchState,
-    }
+    async fetchPlants() {
+      const data = await this.$store.dispatch('plants/fetchPlants', this.query)
+      console.log(data)
+
+      // try {
+      //   const { data } = await tthis.$axios.get(
+      //     `plants/?q=${encodeURIComponent(this.query)}&_limit=${this.limit}`
+      //   )
+      //   this.plants = data.map((plant) => {
+      //     return {
+      //       ...plant,
+      //       isFavorite: false,
+      //     }
+      //   })
+      //   this.store.commit('plants/SET_PLANTS', this.plants)
+
+      //   this.noPlants = this.plants.length === 0
+      // } catch (err) {
+      //   this.error = err
+      // } finally {
+      //   this.isLoading = false
+      // }
+    },
+    filterPlantsByCategory(plants) {
+      return plants.filter((plant) => !plant.category.indexOf(this.category))
+    },
+
+    filterPlantsByName(plants) {
+      return plants.filter((plant) => !plant.name.indexOf(this.name))
+    },
+
+    filterPlantsByRange(plants) {
+      return plants.filter((plant) =>
+        plant.price > 0 && plant.price < this.range ? plant : ''
+      )
+    },
   },
 }
 </script>
-
 
 <style lang="postcss" scoped>
 .form {

@@ -1,30 +1,62 @@
 <template>
   <div class="category-switch">
     <label class="label" for="all-plants">Category</label>
-
+    {{ visibility }}
     <span class="button-group">
       <button
         id="all-plants"
         type="button"
-        :class="`category-button ${
-          $store.state.plants.visibility === 'all' && 'is-selected'
-        }`"
-        @click="$store.commit('plants/SET_VISIBILITY', 'all')"
+        :class="`category-button ${visibility === 'all' && 'is-selected'}`"
+        @click="setVisibility('all')"
       >
         All plants
       </button>
       <button
         type="button"
         :class="`category-button ${
-          $store.state.plants.visibility === 'favorites' && 'is-selected'
+          visibility === 'favorites' && 'is-selected'
         }`"
-        @click="$store.commit('plants/SET_VISIBILITY', 'favorites')"
+        @click="setVisibility('favorites')"
       >
         Favorites
       </button>
     </span>
   </div>
 </template>
+
+<script>
+import usePlants from '~/composables/usePlants'
+
+export default {
+  props: {
+    plantId: {
+      type: Number,
+      default: null,
+    },
+  },
+  setup() {
+    const { visibility, setVisibility } = usePlants()
+
+    return {
+      visibility,
+      setVisibility,
+    }
+  },
+  data() {
+    return {
+      isFavorite: false,
+    }
+  },
+  methods: {
+    updateFavorite(id) {
+      this.isFavorite = !this.isFavorite
+      const upDatedPlant = this.plants.find((plant) => plant.id === id)
+      upDatedPlant.isFavorite = this.isFavorite
+      this.$store.commit('plants/SET_FAVORITE', upDatedPlant)
+    },
+  },
+}
+</script>
 
 <style lang="postcss">
 .button-group {

@@ -2,10 +2,35 @@
   <nav class="navbar">
     <RouterLink to="/" class="brand">
       <SvgLogoMark />
-      <span class="brand-text">Catopia!</span>
+      <span class="brand-text">Catopia! {{ visibility }}</span>
     </RouterLink>
   </nav>
 </template>
+
+<script>
+import usePlants from '~/composables/usePlants'
+
+export default {
+  props: {
+    plantId: {
+      type: Number,
+      default: null,
+    },
+  },
+  setup(props) {
+    const { visibility, setVisibility } = usePlants()
+    return {
+      visibility,
+      setVisibility,
+    }
+  },
+  data() {
+    return {
+      isFavorite: false,
+    }
+  },
+}
+</script>
 
 <style lang="postcss" scoped>
 .navbar {

@@ -1,89 +1,61 @@
-import { useFetch, useContext, ref, computed } from '@nuxtjs/composition-api'
-import { strip } from '@/helpers'
+import { useFetch, useContext, ref, watch, computed, reactive, toRefs, watchEffect } from '@nuxtjs/composition-api'
+
+const filters = {
+  all(plants) {
+    return plants
+  },
+  toxic(plants) {
+    return plants.filter(function (plant) {
+      return plant.toxicity
+    })
+  },
+  'non-toxic'(plants) {
+    return plants.filter(function (plant) {
+      return !plant.toxicity
+    })
+  },
+  favorites(plants) {
+    return plants.filter(function (plant) {
+      return plant.isFavorite
+    })
+  },
+}
+
 
 export default function usePlants() {
-  const { $axios, route } = useContext()
+  const { $axios } = useContext()
 
-  const plants = ref([])
-  const checked = ref([])
-  const isCheckAll = ref(false)
-
-  useFetch(async () => {
-    plants.value = await $axios.$get('plants')
+  const state = reactive({
+    plants: [],
+    visibility: 'all',
+    query: '',
+    isLoading: true,
+  })
+  const { fetch, fetchState } = useFetch(async () => {
+    state.plants = await $axios.$get(`plants?q=${state.query}`)
   })
 
   const filteredPlants = computed(() => {
-    if (route.value.params.tag) {
-      return plants.value.filter(plant => plant.tags.includes(route.value.params.tag))
-    }
-    return plants.value
+    return filters[state.visibility](state.plants)
   })
 
-  const tags = computed(() =>
-    plants.value
-      .map(plant => plant.tags)
-      .flat()
-      .reduce((obj, tag) => {
-        if (!obj[tag]) {
-          obj[tag] = 0
-        }
-        obj[tag]++
-        return obj
-      }, {}),
-  )
+  watch(state.visibility, (newValue, oldValue) => {
+    console.log({ newValue, oldValue })
 
-  function removePlant(index) {
-    plants.value.splice(index, 1)
-  }
+    console.log('The new counter value is: ' + state.visibility)
+  })
 
-  function removePlants() {
-    plants.value = []
-  }
-
-  function markAllRead() {
-    plants.value.forEach(plant => (plant.hasBeenRead = true))
-  }
-
-  function checkAll() {
-    isCheckAll.value = !isCheckAll.value
-    checked.value = []
-
-    if (isCheckAll.value) {
-      for (const key in plants.value) {
-        checked.value.push(plants.value[key])
-      }
-    }
-  }
-
-  function updateCheckAll() {
-    if (checked.value.length === plants.value.length) {
-      isCheckAll.value = true
-    } else {
-      isCheckAll.value = false
-    }
-  }
-
-  function formatDate(date) {
-    const options = { year: 'numeric', month: 'short', day: 'numeric' }
-    return new Date(date).toLocaleDateString('en', options)
-  }
-
-  function truncate(str) {
-    return `${strip(str).substr(0, 50)}...`
-  }
+  const setVisibility = (value) => {
+    // now you'll have to access its value through the `value` property
+    state.visibility = value;
+    console.log(state.visibility)
+  };
 
   return {
-    plants,
-    checked,
-    isCheckAll,
-    tags,
-    checkAll,
-    updateCheckAll,
-    truncate,
-    formatDate,
-    removePlant,
-    removePlants,
+    ...toRefs(state),
+    fetch,
+    fetchState,
     filteredPlants,
-    markAllRead,
+    setVisibility
   }
 }

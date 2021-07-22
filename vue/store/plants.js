@@ -1,5 +1,3 @@
-import plants from '~/data/plants'
-
 const filters = {
   all(plants) {
     return plants
@@ -22,11 +20,12 @@ const filters = {
 }
 
 export const state = () => ({
-  list: plants,
+  list: [],
   view: 'grid',
   selectedFilter: null,
   showFavorites: false,
-  visibility: 'all'
+  visibility: 'all',
+  isLoading: false
 })
 
 export const getters = {
@@ -54,13 +53,23 @@ export const getters = {
 }
 
 export const mutations = {
-  SET_PLANTS: (state, plants) =>
-  (state.list = plants.map(plant => {
-    return {
-      ...plant,
-      isFavorite: false,
-    }
-  })),
+  // SET_PLANTS: (state, plants) =>
+  // (state.list = plants.map(plant => {
+  //   return {
+  //     ...plant,
+  //     isFavorite: false,
+  //   }
+  // })),
+  SET_PLANTS: (state, plants) => {
+    state.list = plants
+  },
+
+  // (state.list = plants.map(plant => {
+  //   return {
+  //     ...plant,
+  //     isFavorite: false,
+  //   }
+  // })),
 
   REMOVE_PLANT(state, plantId) {
     state.list = state.list.filter(plant => plant.id !== plantId)
@@ -90,6 +99,25 @@ export const actions = {
   async nuxtServerInit({ commit }, { $axios }) {
     const plants = await $axios.$get('plants')
 
+    commit('SET_PLANTS', plants)
+  },
+
+  initPlants({ commit }, plants) {
+    console.log('init...', plants);
+
+
+    commit('SET_PLANTS', plants)
+  },
+  async fetchPlants({ commit }, search) {
+    const { data } = await this.$axios.get(
+      `plants/?q=${encodeURIComponent(search)}&_limit=${this.limit}`
+    )
+    const plants = data.map((plant) => {
+      return {
+        ...plant,
+        isFavorite: false,
+      }
+    })
     commit('SET_PLANTS', plants)
   }
 }
