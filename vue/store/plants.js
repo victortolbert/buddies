@@ -20,12 +20,12 @@ const filters = {
 }
 
 export const state = () => ({
+  isLoading: false,
   list: [],
-  view: 'grid',
   selectedFilter: null,
   showFavorites: false,
+  view: 'grid',
   visibility: 'all',
-  isLoading: false
 })
 
 export const getters = {
@@ -53,23 +53,13 @@ export const getters = {
 }
 
 export const mutations = {
-  // SET_PLANTS: (state, plants) =>
-  // (state.list = plants.map(plant => {
-  //   return {
-  //     ...plant,
-  //     isFavorite: false,
-  //   }
-  // })),
-  SET_PLANTS: (state, plants) => {
-    state.list = plants
-  },
-
-  // (state.list = plants.map(plant => {
-  //   return {
-  //     ...plant,
-  //     isFavorite: false,
-  //   }
-  // })),
+  SET_PLANTS: (state, plants) =>
+  (state.list = plants.map(plant => {
+    return {
+      ...plant,
+      isFavorite: false,
+    }
+  })),
 
   REMOVE_PLANT(state, plantId) {
     state.list = state.list.filter(plant => plant.id !== plantId)
