@@ -53,7 +53,7 @@ export default {
   display: inline-block;
   width: 3rem;
   height: 3rem;
-  border-radius: 9999px;
+  border-radius: var(--ds-border-rounded-full);
 
   @media (min-width: 640px) {
     width: 3rem;
@@ -68,6 +68,7 @@ export default {
 }
 
 .title {
+  text-align: left;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;

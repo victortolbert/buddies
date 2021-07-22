@@ -14,10 +14,7 @@
       </div>
 
       <div class="flex-1 mt-4 ml-0 sm:truncate sm:mt-0 sm:ml-4">
-        <!-- <button @click.stop="showPlantDetails(plant.id)">
-          {{ plant.details }}
-        </button> -->
-        <PlantDetailButton :plant-id="plant.id">
+        <PlantDetailButton :plant-id="plant.id" class="text-left">
           {{ plant.details }}
         </PlantDetailButton>
       </div>

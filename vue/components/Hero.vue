@@ -28,32 +28,8 @@
   }
 }
 .hero-form {
-  @apply w-full max-w-sm mx-auto md:max-w-sm;
+  width: 100%;
+  margin: 0 auto;
+  @apply w-full max-w-sm md:max-w-sm;
 }
-
-/*
-form {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 2rem;
-
-  @media (min-width: 640px) {
-    overflow: hidden;
-    height: 20rem;
-    max-width: 52rem;
-    margin: 0 auto;
-    padding: 0 17rem;
-    flex: 1 1 0%;
-  }
-} */
-
-/* fieldset {
-  margin-top: 1rem;
-  position: relative;
-}
-
-*/
 </style>

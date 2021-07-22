@@ -10,6 +10,7 @@
   --ds-color-red: #c63434;
   --ds-breakpoint-sm: 640px;
   --ds-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --ds-border-rounded-full: 9999px;
 }
 
 ::placeholder {
@@ -22,7 +23,7 @@ html {
 }
 
 .avatar {
-  border-radius: 9999px;
+  border-radius: var(--ds-border-rounded-full);
   width: 3rem;
   height: 3rem;
 }

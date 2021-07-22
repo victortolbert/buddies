@@ -24,6 +24,6 @@ export default {
 <style>
 .avatar {
   display: inline-block;
-  border-radius: 9999px;
+  border-radius: var(--ds-border-rounded-full);
 }
 </style>

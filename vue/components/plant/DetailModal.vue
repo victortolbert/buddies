@@ -1,12 +1,6 @@
 <template>
-  <ModalDialog :show="show" @close="cancel">
-    <!-- <pre>{{ plant }}</pre> -->
+  <ModalDialog v-click-outside="onClickOutside" :show="show" @close="cancel">
     <PlantDetails :plant="plant" @close="cancel" />
-
-    <!-- <button class="close-button" @click="cancel">
-      <span class="sr-only">Close panel</span>
-      <SvgX />
-    </button> -->
   </ModalDialog>
 </template>
 
@@ -35,6 +29,9 @@ export default {
   methods: {
     cancel() {
       this.$emit('close')
+    },
+    onClickOutside() {
+      this.cancel()
     },
   },
 }

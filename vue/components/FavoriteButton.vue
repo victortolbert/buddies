@@ -4,10 +4,6 @@
     class="favorite-button"
     @click.prevent="updateFavorite(plantId)"
   >
-    <BaseIcon
-      name="favorite"
-      :class="['icon', `${isFavorite && 'is-favorite'}`]"
-    />
     <svg
       class="text-gray-400 hover:text-gray-700 group-hover:text-gray-700"
       width="24"
@@ -58,7 +54,9 @@ export default {
 <style lang="postcss" scoped>
 .favorite-button {
   /* group */
-  @apply inline-flex items-center rounded;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--ds-border-rounded-full);
 }
 
 .icon {

@@ -11,8 +11,18 @@ module.exports = {
   peachSchnapps: getColors('#ffdbd2'),
   pomegranate: getColors('#fb4319'),
   scooter: getColors('#27c3e3'),
-  oliveGreen: getColors('#b2b45d'), // Promise Serves primary
-  mineShaft: getColors('#323232'), // Promise Serves secondary
+  flushMahogany: {
+    '50': '#fcf5f5',
+    '100': '#f9ebeb',
+    '200': '#f1cccc',
+    '300': '#e8aeae',
+    '400': '#d77171',
+    '500': '#c63434',
+    '600': '#b22f2f',
+    '700': '#952727',
+    '800': '#771f1f',
+    '900': '#611919'
+  },
   capeCod: {
     '50': '#f5f6f6',
     '100': '#ebecec',

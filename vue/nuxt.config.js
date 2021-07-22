@@ -36,6 +36,7 @@ export default {
     '@/plugins/content-placeholders',
     '@/plugins/portal-vue',
     '@/plugins/vue-api-query',
+    '@/plugins/v-click-outside',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -106,18 +107,6 @@ export default {
       }
     },
     extractCSS: true,
-    // optimization: {
-    //   splitChunks: {
-    //     cacheGroups: {
-    //       styles: {
-    //         name: 'styles',
-    //         test: /\.(css|vue)$/,
-    //         chunks: 'all',
-    //         enforce: true
-    //       }
-    //     }
-    //   }
-    // },
 
     extend() { }
   },

@@ -34,22 +34,7 @@ export const getters = {
     return state.list.filter(plant => plant.isFavorite)
   },
 
-  // filteredPlants: state => {
-  //   if (state.selectedFilter === 'toxic') {
-  //     return state.list.filter(
-  //       (plant) => typeof plant.toxicity !== 'undefined'
-  //     )
-  //   } else if (state.selectedFilter === 'non-toxic') {
-  //     return state.list.filter(
-  //       (plant) => typeof plant.toxicity === 'undefined'
-  //     )
-  //   }
-  //   return state.list
-  // },
-
   filteredPlants: state => {
-    console.log(filters[state.visibility])
-
     return filters[state.visibility](state.list)
   },
 
@@ -98,28 +83,7 @@ export const mutations = {
       ...state.list.filter(item => item.id !== payload.id),
       payload
     ]
-    // console.log({ list: state.list })
   },
-  // SET_FAVORITE: (state, {id, isFavorite}) => {
-  //   const foundIndex = state.list.findIndex(plant => plant.id === id)
-  //   console.log({ foundIndex })
-
-  //   state.list.find(plant => plant.id === id)
-
-  //   state.list = plants.map(plant => {
-  //     return {
-  //       ...plant,
-  //       isFavorite
-  //     }
-  //   })
-  //   removeTodo: (state, plant) => {
-  //     const index = state.list.indexOf(plant);
-  // state.list.splice(index, 1);
-  //   },
-
-  // REMOVE_MESSAGE(state, messageId) {
-  //   state.messages = state.messages.filter(message => message.id !== messageId)
-  // },
 }
 
 export const actions = {

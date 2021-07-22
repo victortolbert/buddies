@@ -22,20 +22,10 @@ export default {
     ...mapState({
       category: (state) => state.ui.category,
     }),
-    // category: {
-    //   get() {
-    //     return this.$store.state.ui.category
-    //   },
-    //   set(value) {
-    //     this.$store.commit('ui/UPDATE_CATEGORY', value)
-    //   },
-    // },
   },
 
   methods: {
     updateCategory(event) {
-      console.log('onChange... updateCategory refetch?...', event.target.value)
-      // console.log(event.target.value)
       this.$store.commit('ui/UPDATE_CATEGORY', event.target.value)
       this.$store.commit('plants/SET_VISIBILITY', event.target.value)
     },

@@ -24,11 +24,13 @@
         </div>
 
         <div style="display: flex; align-items: center">
-          <Badge v-if="plant.toxicity" :type="`${plant.toxicity && 'toxic'}`">
+          <Badge :type="`${plant.toxicity && 'toxic'}`">
             {{ plant.toxicity ? 'Toxic' : 'Non-toxic' }}
           </Badge>
 
-          <FavoriteButton class="ml-2.5">Favorite</FavoriteButton>
+          <FavoriteButton :plant-id="plant.id" class="ml-2.5">
+            Favorite
+          </FavoriteButton>
         </div>
       </div>
 
@@ -42,13 +44,7 @@
       <div v-if="plant.toxicity" id="toxicity" class="detail-section">
         <h3 class="detail-section-heading">Toxicity</h3>
         <div class="detail-section-body">
-          <ul
-            style="
-              margin-left: 1rem;
-              list-style-position: outside;
-              list-style-type: disc;
-            "
-          >
+          <ul class="toxicity-list">
             <li>{{ plant.toxicity.property }}</li>
             <li>{{ plant.toxicity.symptoms }}</li>
           </ul>
@@ -63,18 +59,16 @@
         <div class="detail-section-body">
           <ul style="list-style-position: outside">
             <li
+              class="care-list-item"
               style="
-                line-height: 2rem;
-                padding-left: 2rem;
                 background: url('/assets/images/water.svg') no-repeat left 50%;
               "
             >
               {{ plant.care.water }}
             </li>
             <li
+              class="care-list-item"
               style="
-                line-height: 2rem;
-                padding-left: 2rem;
                 background: url('/assets/images/light.svg') no-repeat left 50%;
               "
             >
@@ -232,5 +226,15 @@ export default {
   line-height: 1.3125rem;
   font-style: italic;
   color: #515e5f;
+}
+
+.toxicity-list {
+  margin-left: 1rem;
+  list-style-position: outside;
+  list-style-type: disc;
+}
+.care-list-item {
+  line-height: 2rem;
+  padding-left: 2rem;
 }
 </style>

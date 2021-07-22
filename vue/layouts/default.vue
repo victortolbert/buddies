@@ -5,7 +5,6 @@
     </main>
 
     <PortalTarget name="overlays" />
-    <SlideOver class="hidden" />
   </div>
 </template>
 

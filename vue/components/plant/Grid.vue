@@ -9,12 +9,9 @@
           :src="`/assets/${plant.image}`"
         />
 
-        <DetailButton
-          class="gallery-button"
-          @click.native="$store.commit('ui/OPEN_OVERLAY')"
-        >
+        <PlantDetailButton :plant-id="plant.id" class="gallery-button">
           <span class="sr-only">View details for IMG_4985.HEIC</span>
-        </DetailButton>
+        </PlantDetailButton>
       </header>
 
       <footer class="flex items-center justify-between p-4">
@@ -26,7 +23,10 @@
             {{ plant.toxicity ? 'Toxic' : 'Non-toxic' }}
           </Badge>
 
-          <FavoriteButton class="ml-2.5 text-gray-500 hover:text-gray-700" />
+          <FavoriteButton
+            :plant-id="plant.id"
+            class="ml-2.5 text-gray-500 hover:text-gray-700"
+          />
         </div>
       </footer>
     </li>
@@ -40,16 +40,6 @@ export default {
     plants: {
       type: Array,
       default: () => [],
-    },
-  },
-  methods: {
-    viewDetails() {
-      // eslint-disable-next-line no-console
-      console.log('clicked')
-    },
-
-    toggle(event) {
-      // console.log('toggle', event)
     },
   },
 }
