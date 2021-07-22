@@ -26,12 +26,35 @@
 </template>
 
 <script>
+import usePlants from '~/composables/usePlants'
+
 export default {
   props: {
     plantId: {
       type: Number,
       default: null,
     },
+  },
+  setup() {
+    const {
+      fetch,
+      fetchState,
+      isLoading,
+      query,
+      visibility,
+      plants,
+      filteredPlants,
+    } = usePlants()
+
+    return {
+      filteredPlants,
+      plants,
+      query,
+      visibility,
+      isLoading,
+      fetch,
+      fetchState,
+    }
   },
   data() {
     return {
@@ -41,9 +64,7 @@ export default {
   methods: {
     updateFavorite(id) {
       this.isFavorite = !this.isFavorite
-      const upDatedPlant = this.$store.state.plants.list.find(
-        (plant) => plant.id === id
-      )
+      const upDatedPlant = this.plants.find((plant) => plant.id === id)
       upDatedPlant.isFavorite = this.isFavorite
       this.$store.commit('plants/SET_FAVORITE', upDatedPlant)
     },

@@ -7,6 +7,22 @@
   </nav>
 </template>
 
+<script>
+export default {
+  props: {
+    plantId: {
+      type: Number,
+      default: null,
+    },
+  },
+  data() {
+    return {
+      isFavorite: false,
+    }
+  },
+}
+</script>
+
 <style lang="postcss" scoped>
 .navbar {
   display: flex;

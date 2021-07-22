@@ -4,7 +4,7 @@
       <Navbar />
 
       <section class="hero">
-        <form class="form" @submit.prevent="fetchPlants">
+        <form class="form" @submit.prevent="fetch">
           <h1 class="title">Can my cat eat that?</h1>
 
           <h2 class="subtitle">
@@ -16,7 +16,7 @@
             <SvgSearchIcon class="search-icon" />
 
             <input
-              v-model="q"
+              v-model="query"
               class="search-input"
               type="search"
               placeholder="Spider plant, fiddle leaf fig, etc..."
@@ -33,11 +33,11 @@
       <PlantToolbar />
     </section>
 
-    <section v-if="noPlants" class="section">
+    <!-- <section v-if="noPlants" class="section">
       Sorry, but no plants matched your search criteria
-    </section>
+    </section> -->
 
-    <section v-if="isLoading" class="section">
+    <section v-if="fetchState.pending" class="section">
       <i>Searching...</i>
     </section>
 
@@ -52,64 +52,19 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import usePlants from '~/composables/usePlants'
+
 export default {
-  data: () => ({
-    q: '',
-    limit: 20,
-    plants: [],
-    showFavorites: false,
-    noPlants: false,
-    isLoading: false,
-    error: null,
-    visibility: 'all',
-  }),
-  computed: {
-    ...mapGetters('plants', ['filteredPlants']),
-  },
-  watch: {
-    '$route.query': '$fetch',
-  },
-  async created() {
-    await this.fetchPlants()
-  },
-  methods: {
-    refresh() {
-      this.$fetch()
-    },
-    async fetchPlants() {
-      this.isLoading = true
+  setup() {
+    const { fetch, fetchState, filteredPlants, visibility, query } = usePlants()
 
-      try {
-        const { data } = await this.$axios.get(
-          `plants/?q=${encodeURIComponent(this.q)}&_limit=${this.limit}`
-        )
-        this.plants = data.map((plant) => {
-          return {
-            ...plant,
-            isFavorite: false,
-          }
-        })
-        this.noPlants = this.plants.length === 0
-      } catch (err) {
-        this.error = err
-      } finally {
-        this.isLoading = false
-      }
-    },
-    filterPlantsByCategory(plants) {
-      return plants.filter((plant) => !plant.category.indexOf(this.category))
-    },
-
-    filterPlantsByName(plants) {
-      return plants.filter((plant) => !plant.name.indexOf(this.name))
-    },
-
-    filterPlantsByRange(plants) {
-      return plants.filter((plant) =>
-        plant.price > 0 && plant.price < this.range ? plant : ''
-      )
-    },
+    return {
+      visibility,
+      query,
+      filteredPlants,
+      fetch,
+      fetchState,
+    }
   },
 }
 </script>

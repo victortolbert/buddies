@@ -1,5 +1,3 @@
-import plants from '~/data/plants'
-
 const filters = {
   all(plants) {
     return plants
@@ -22,11 +20,12 @@ const filters = {
 }
 
 export const state = () => ({
-  list: plants,
-  view: 'grid',
+  isLoading: false,
+  list: [],
   selectedFilter: null,
   showFavorites: false,
-  visibility: 'all'
+  view: 'grid',
+  visibility: 'all',
 })
 
 export const getters = {
@@ -90,6 +89,25 @@ export const actions = {
   async nuxtServerInit({ commit }, { $axios }) {
     const plants = await $axios.$get('plants')
 
+    commit('SET_PLANTS', plants)
+  },
+
+  initPlants({ commit }, plants) {
+    console.log('init...', plants);
+
+
+    commit('SET_PLANTS', plants)
+  },
+  async fetchPlants({ commit }, search) {
+    const { data } = await this.$axios.get(
+      `plants/?q=${encodeURIComponent(search)}&_limit=${this.limit}`
+    )
+    const plants = data.map((plant) => {
+      return {
+        ...plant,
+        isFavorite: false,
+      }
+    })
     commit('SET_PLANTS', plants)
   }
 }
