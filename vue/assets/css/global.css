@@ -17,6 +17,10 @@
   opacity: 1;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 .avatar {
   border-radius: 9999px;
   width: 3rem;

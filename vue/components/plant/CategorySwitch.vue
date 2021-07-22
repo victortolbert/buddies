@@ -7,7 +7,7 @@
         id="all-plants"
         type="button"
         :class="`category-button ${
-          $store.state.plants.selectedFilter === null && 'is-selected'
+          $store.state.plants.visibility === 'all' && 'is-selected'
         }`"
         @click="$store.commit('plants/SET_VISIBILITY', 'all')"
       >
@@ -16,7 +16,7 @@
       <button
         type="button"
         :class="`category-button ${
-          $store.state.plants.selectedFilter === 'favorites' && 'is-selected'
+          $store.state.plants.visibility === 'favorites' && 'is-selected'
         }`"
         @click="$store.commit('plants/SET_VISIBILITY', 'favorites')"
       >
@@ -57,13 +57,15 @@
   font-weight: 500;
   border-width: 1px;
   border-color: rgba(209, 213, 219, 1);
-  /* color: rgba(55, 65, 81, 1); */
-  /* background-color: rgba(255, 255, 255, var(--ds-bg-opacity)); */
+  color: rgba(55, 65, 81, 1);
+  background-color: rgba(255, 255, 255, var(--ds-bg-opacity));
   white-space: nowrap;
   padding: 0.5rem 2rem;
 }
 
 .category-button.is-selected {
+  color: var(--ds-color-white);
+  background-color: var(--ds-color-dark-gray);
   @apply text-white bg-gray-900;
 }
 </style>

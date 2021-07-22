@@ -92,22 +92,30 @@ export const mutations = {
   SET_VISIBILITY(state, visibility) {
     state.visibility = visibility
   },
+
   SET_FAVORITE: (state, payload) => {
-    state.list.find(plant => plant.id === payload.id)
-
-    console.log({ isFavorite: payload.isFavorite, id: payload.id })
-
-    state.list = plants.map(plant => {
-      return {
-        ...plant,
-        isFavorite
-      }
-    })
+    state.list = [
+      ...state.list.filter(item => item.id !== payload.id),
+      payload
+    ]
+    // console.log({ list: state.list })
   },
-  removeTodo: (state, plant) => {
-    const index = state.list.indexOf(plant);
-    state.list.splice(index, 1);
-  },
+  // SET_FAVORITE: (state, {id, isFavorite}) => {
+  //   const foundIndex = state.list.findIndex(plant => plant.id === id)
+  //   console.log({ foundIndex })
+
+  //   state.list.find(plant => plant.id === id)
+
+  //   state.list = plants.map(plant => {
+  //     return {
+  //       ...plant,
+  //       isFavorite
+  //     }
+  //   })
+  //   removeTodo: (state, plant) => {
+  //     const index = state.list.indexOf(plant);
+  // state.list.splice(index, 1);
+  //   },
 
   // REMOVE_MESSAGE(state, messageId) {
   //   state.messages = state.messages.filter(message => message.id !== messageId)

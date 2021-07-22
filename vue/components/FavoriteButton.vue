@@ -1,5 +1,9 @@
 <template>
-  <button type="button" class="favorite-button" @click="updateFavorite">
+  <button
+    type="button"
+    class="favorite-button"
+    @click.prevent="updateFavorite(plantId)"
+  >
     <BaseIcon
       name="favorite"
       :class="['icon', `${isFavorite && 'is-favorite'}`]"
@@ -26,8 +30,6 @@
 </template>
 
 <script>
-import commitlintConfig from '~/commitlint.config'
-
 export default {
   props: {
     plantId: {
@@ -41,19 +43,13 @@ export default {
     }
   },
   methods: {
-    updateFavorite() {
+    updateFavorite(id) {
       this.isFavorite = !this.isFavorite
-      const index = this.$store.state.plants.list.findIndex(
-        (plant) => plant.id === this.plantId
+      const upDatedPlant = this.$store.state.plants.list.find(
+        (plant) => plant.id === id
       )
-      this.$store.commit('plants/SET_FAVORITE', {
-        index,
-        id: this.plantId,
-        isFavorite: this.isFavorite,
-      })
-
-      // this.$store.state.plants.list[index].isFavorite = this.isFavorite
-      // console.log('updateFavorites', this.$store.state.plants.list[index])
+      upDatedPlant.isFavorite = this.isFavorite
+      this.$store.commit('plants/SET_FAVORITE', upDatedPlant)
     },
   },
 }
