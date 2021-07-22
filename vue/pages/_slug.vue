@@ -1,8 +1,14 @@
 <template>
   <div>
-    <h1>{{ page.title }}</h1>
-    <p>{{ page.description }}</p>
-    <nuxt-content :document="page" />
+    <Navbar />
+
+    <div class="max-w-md mx-6 mt-6">
+      <div class="prose">
+        <p>{{ page.description }}</p>
+
+        <NuxtContent :document="page" />
+      </div>
+    </div>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/vue";
-import Counter from "@/components/Counter";
+import Counter from "./fixtures/Counter.vue";
 
 test("increments value on click", async () => {
   // The `render` method renders the component into the document.

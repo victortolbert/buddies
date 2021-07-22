@@ -1,9 +1,8 @@
 <template>
-  <!-- px-3 py-1 text-sm font-medium leading-4 border border-transparent hover:bg-gray-50 -->
   <button
     type="button"
-    class="inline-flex items-center rounded  group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-    @click="isFavorite = !isFavorite"
+    class="favorite-button"
+    @click.prevent="updateFavorite(plantId)"
   >
     <svg
       class="text-gray-400 hover:text-gray-700 group-hover:text-gray-700"
@@ -28,10 +27,42 @@
 
 <script>
 export default {
+  props: {
+    plantId: {
+      type: Number,
+      default: null,
+    },
+  },
   data() {
     return {
       isFavorite: false,
     }
   },
+  methods: {
+    updateFavorite(id) {
+      this.isFavorite = !this.isFavorite
+      const upDatedPlant = this.$store.state.plants.list.find(
+        (plant) => plant.id === id
+      )
+      upDatedPlant.isFavorite = this.isFavorite
+      this.$store.commit('plants/SET_FAVORITE', upDatedPlant)
+    },
+  },
 }
 </script>
+
+<style lang="postcss" scoped>
+.favorite-button {
+  /* group */
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--ds-border-rounded-full);
+}
+
+.icon {
+  @apply text-gray-400 hover:text-gray-700 group-hover:text-gray-700;
+}
+.icon.is-favorite {
+  color: var(--ds-color-red);
+}
+</style>

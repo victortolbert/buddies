@@ -11,14 +11,30 @@
 
 <style lang="postcss">
 .card {
-  @apply overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 0.5rem;
+  box-shadow: var(--sb-shadow);
+}
+
+.card > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(229, 231, 235, 1);
+  border-top-width: 0;
+  border-bottom-width: 0;
 }
 
 .card-header {
-  @apply px-4 py-5 border sm:px-6;
+  @media (min-width: 640px) {
+    padding: 0 1.5rem;
+  }
 }
 
 .card-body {
-  @apply px-4 py-5 border sm:p-6;
+  padding: 1.25rem 1rem;
+  border-width: 1px;
+
+  @media (min-width: 640px) {
+    padding: 1.5rem;
+  }
 }
 </style>

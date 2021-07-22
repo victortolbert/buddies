@@ -1,5 +1,5 @@
 <template>
-  <span :class="`badge ${classes}`">
+  <span :class="classes">
     <slot></slot>
   </span>
 </template>
@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     classes() {
-      return this.type === 'toxic' && 'is-toxic'
+      return type === 'toxic' && 'is-toxic'
     },
   },
 }
@@ -30,12 +30,15 @@ export default {
   border-radius: 1rem;
   font-weight: bold;
   font-size: 0.75rem;
-  background-color: #006b40;
-  color: #fff;
 }
 
 .badge.is-toxic {
   background-color: #ffbc00;
+  color: #000;
+}
+
+.badge.is-non-toxic {
+  background-color: #006b40;
   color: #000;
 }
 </style>

@@ -1,36 +1,55 @@
 import plants from '~/data/plants'
 
+const filters = {
+  all(plants) {
+    return plants
+  },
+  toxic(plants) {
+    return plants.filter(function (plant) {
+      return plant.toxicity
+    })
+  },
+  'non-toxic'(plants) {
+    return plants.filter(function (plant) {
+      return !plant.toxicity
+    })
+  },
+  favorites(plants) {
+    return plants.filter(function (plant) {
+      return plant.isFavorite
+    })
+  },
+}
+
 export const state = () => ({
   list: plants,
   view: 'grid',
-  selectedFilter: null
+  selectedFilter: null,
+  showFavorites: false,
+  visibility: 'all'
 })
 
 export const getters = {
   favoritePlants: state => {
     return state.list.filter(plant => plant.isFavorite)
   },
+
   filteredPlants: state => {
-    if (state.selectedFilter === 'toxic') {
-      return state.list.filter(
-        (plant) => typeof plant.toxicity !== 'undefined'
-      )
-    } else if (state.selectedFilter === 'non-toxic') {
-      return state.plants.filter(
-        (plant) => typeof plant.toxicity === 'undefined'
-      )
-    }
-    return state.list
+    return filters[state.visibility](state.list)
   },
+
   toxicPlants: state => {
     return state.list.filter(
       (plant) => typeof plant.toxicity !== 'undefined'
     )
   },
   nonToxicPlants: state => {
-    return state.plants.filter(
+    return state.list.filter(
       (plant) => typeof plant.toxicity === 'undefined'
     )
+  },
+  getPlantById: state => id => {
+    return state.list.find(plant => plant.id === id)
   },
 }
 
@@ -40,7 +59,6 @@ export const mutations = {
     return {
       ...plant,
       isFavorite: false,
-      isDeleted: false,
     }
   })),
 
@@ -54,7 +72,18 @@ export const mutations = {
 
   SET_FILTER(state, filter) {
     state.selectedFilter = filter
-  }
+  },
+
+  SET_VISIBILITY(state, visibility) {
+    state.visibility = visibility
+  },
+
+  SET_FAVORITE: (state, payload) => {
+    state.list = [
+      ...state.list.filter(item => item.id !== payload.id),
+      payload
+    ]
+  },
 }
 
 export const actions = {

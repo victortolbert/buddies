@@ -5,10 +5,6 @@ export default {
     assetsURL: process.env.ASSETS_URL || 'http://localhost:3000',
   },
 
-  publicRuntimeConfig: {
-    tmdbApiKey: process.env.TMDB_API_KEY,
-  },
-
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -31,14 +27,16 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/styles.css',
-    // '~/assets/css/styles.css'
+    '~/assets/css/normalize.css',
+    '~/assets/css/global.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/content-placeholders',
-    '@/plugins/portal-vue'
+    '@/plugins/portal-vue',
+    '@/plugins/vue-api-query',
+    '@/plugins/v-click-outside',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -109,18 +107,6 @@ export default {
       }
     },
     extractCSS: true,
-    // optimization: {
-    //   splitChunks: {
-    //     cacheGroups: {
-    //       styles: {
-    //         name: 'styles',
-    //         test: /\.(css|vue)$/,
-    //         chunks: 'all',
-    //         enforce: true
-    //       }
-    //     }
-    //   }
-    // },
 
     extend() { }
   },

@@ -1,69 +1,142 @@
 <template>
-  <section>
-    <p v-if="$fetchState.pending">Fetching the plants...</p>
+  <div>
+    <header class="plants-header">
+      <Navbar />
 
-    <div v-else-if="$fetchState.error">
-      <p>I'm having an issue fetching the plants</p>
-    </div>
+      <section class="hero">
+        <form class="form" @submit.prevent="fetchPlants">
+          <h1 class="title">Can my cat eat that?</h1>
 
-    <div v-else>
-      <Header />
+          <h2 class="subtitle">
+            Search and filter common house plants and see what’s safe for
+            Sprinkles to nibble on.
+          </h2>
 
-      <section class="section">
-        <Tools />
+          <div class="search-field">
+            <SvgSearchIcon class="search-icon" />
+
+            <input
+              v-model="q"
+              class="search-input"
+              type="search"
+              placeholder="Spider plant, fiddle leaf fig, etc..."
+            />
+          </div>
+        </form>
       </section>
 
-      <section v-if="$store.state.ui.activeView === 'list'" class="section">
-        <List :plants="filteredPlants" />
-      </section>
+      <SvgCatLeft class="cat cat-left" />
+      <SvgCatRight class="cat cat-right" />
+    </header>
 
-      <section v-else class="p-6">
-        <Grid :plants="filteredPlants" />
-      </section>
-    </div>
-  </section>
+    <section class="section">
+      <PlantToolbar />
+    </section>
+
+    <section v-if="noPlants" class="section">
+      Sorry, but no plants matched your search criteria
+    </section>
+
+    <section v-if="isLoading" class="section">
+      <i>Searching...</i>
+    </section>
+
+    <section v-if="$store.state.ui.activeView === 'list'" class="section">
+      <PlantList :plants="filteredPlants" />
+    </section>
+
+    <section v-else class="p-6">
+      <PlantGrid :plants="filteredPlants" />
+    </section>
+  </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  data() {
-    return {
-      plants: [],
-      showFavorites: false,
-      selectedCategory: '',
-    }
-  },
-  async fetch() {
-    const { data } = await this.$axios.get('plants')
-    this.plants = data.map((plant) => {
-      return {
-        ...plant,
-        isFavorite: false,
-      }
-    })
-  },
+  data: () => ({
+    q: '',
+    limit: 20,
+    plants: [],
+    showFavorites: false,
+    noPlants: false,
+    isLoading: false,
+    error: null,
+    visibility: 'all',
+  }),
   computed: {
-    filteredPlants() {
-      if (this.selectedCategory === 'toxic') {
-        return this.toxicPlants()
-      } else if (this.selectedCategory === 'non-toxic') {
-        return this.nonToxicPlants()
+    ...mapGetters('plants', ['filteredPlants']),
+  },
+  watch: {
+    '$route.query': '$fetch',
+  },
+  async created() {
+    await this.fetchPlants()
+  },
+  methods: {
+    refresh() {
+      this.$fetch()
+    },
+    async fetchPlants() {
+      this.isLoading = true
+
+      try {
+        const { data } = await this.$axios.get(
+          `plants/?q=${encodeURIComponent(this.q)}&_limit=${this.limit}`
+        )
+        this.plants = data.map((plant) => {
+          return {
+            ...plant,
+            isFavorite: false,
+          }
+        })
+        this.noPlants = this.plants.length === 0
+      } catch (err) {
+        this.error = err
+      } finally {
+        this.isLoading = false
       }
-      return this.plants
     },
-    toxicPlants() {
-      return this.plants.filter(
-        (plant) => typeof plant.toxicity !== 'undefined'
+    filterPlantsByCategory(plants) {
+      return plants.filter((plant) => !plant.category.indexOf(this.category))
+    },
+
+    filterPlantsByName(plants) {
+      return plants.filter((plant) => !plant.name.indexOf(this.name))
+    },
+
+    filterPlantsByRange(plants) {
+      return plants.filter((plant) =>
+        plant.price > 0 && plant.price < this.range ? plant : ''
       )
-    },
-    nonToxicPlants() {
-      return this.plants.filter(
-        (plant) => typeof plant.toxicity === 'undefined'
-      )
-    },
-    favoritePlants() {
-      return this.plants.filter((plant) => plant.isFavorite)
     },
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+.form {
+  @apply w-full mx-auto mt-12 sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl;
+}
+.title {
+  @apply text-2xl font-bold sm:text-4xl;
+}
+
+.hero {
+  @apply relative px-4 overflow-hidden  h-80;
+}
+.hero .subtitle {
+  font-size: 1.3125rem;
+  max-width: 36rem;
+}
+
+.cat-left {
+  @apply absolute left-0 hidden origin-left transform scale-75  sm:left-2 lg:left-6 bottom-8 sm:block lg:scale-100;
+}
+.cat-right {
+  @apply absolute hidden origin-right transform scale-75 sm:block -right-5 top-14 lg:scale-100;
+}
+.plants-header {
+  @apply relative overflow-hidden bg-sky-blue;
+}
+</style>
