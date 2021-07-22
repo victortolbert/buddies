@@ -1,14 +1,22 @@
 <template>
-  <img class="avatar" :src="image" alt="" />
+  <img class="avatar" :src="src" alt="" />
 </template>
 
 <script>
 export default {
   props: {
-    image: {
+    src: {
       type: String,
       default: 'images/avatar.jpeg',
     },
+    appearance: {
+      type: String,
+      default: 'circle',
+    },
+    // name: {
+    //   type: String,
+    //   required: true,
+    // },
   },
 }
 </script>

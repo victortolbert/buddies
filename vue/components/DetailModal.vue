@@ -96,21 +96,21 @@ export default {
   border-radius: 0.5rem;
   padding: 1.25rem 1rem 1rem;
   overflow: hidden;
-  --sb-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  --ds-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  box-shadow: var(--sb-ring-offset-shadow, 0 0 #0000),
-    var(--sb-ring-shadow, 0 0 #0000), var(--sb-shadow);
+  box-shadow: var(--ds-ring-offset-shadow, 0 0 #0000),
+    var(--ds-ring-shadow, 0 0 #0000), var(--ds-shadow);
 
-  --sb-translate-x: 0;
-  --sb-translate-y: 0;
-  --sb-rotate: 0;
-  --sb-skew-x: 0;
-  --sb-skew-y: 0;
-  --sb-scale-x: 1;
-  --sb-scale-y: 1;
-  transform: translateX(var(--sb-translate-x)) translateY(var(--sb-translate-y))
-    rotate(var(--sb-rotate)) skewX(var(--sb-skew-x)) skewY(var(--sb-skew-y))
-    scaleX(var(--sb-scale-x)) scaleY(var(--sb-scale-y));
+  --ds-translate-x: 0;
+  --ds-translate-y: 0;
+  --ds-rotate: 0;
+  --ds-skew-x: 0;
+  --ds-skew-y: 0;
+  --ds-scale-x: 1;
+  --ds-scale-y: 1;
+  transform: translateX(var(--ds-translate-x)) translateY(var(--ds-translate-y))
+    rotate(var(--ds-rotate)) skewX(var(--ds-skew-x)) skewY(var(--ds-skew-y))
+    scaleX(var(--ds-scale-x)) scaleY(var(--ds-scale-y));
 
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -140,13 +140,22 @@ export default {
   }
 }
 
-@screen sm {
+@media (min-width: 640px) {
   .modal {
-    @apply inset-0 p-0 flex items-center justify-center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    padding: 0px;
   }
 
   .modal-panel {
-    @apply max-w-3xl w-full p-6;
+    max-width: 48rem;
+    width: 100%;
+    padding: 1.5rem;
   }
 }
 </style>

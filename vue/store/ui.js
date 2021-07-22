@@ -1,6 +1,7 @@
 export const state = () => ({
   overlayIsOpen: false,
-  activeView: 'list'
+  activeView: 'list',
+  category: 'toxic'
 })
 
 export const mutations = {
@@ -15,4 +16,8 @@ export const mutations = {
   SET_ACTIVE_VIEW(state, payload) {
     state.activeView = payload
   },
+
+  UPDATE_CATEGORY(state, category) {
+    state.category = category
+  }
 }

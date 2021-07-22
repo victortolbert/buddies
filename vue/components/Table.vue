@@ -1,15 +1,11 @@
 <template>
-  <div class="m-6">
+  <div class="table-wrapper">
     <table class="table w-full">
       <tbody>
-        <tr
-          v-for="plant in filteredPlants"
-          :key="plant.id"
-          class="table-row text-gray-500 border-t cursor-pointer  group hover:bg-gray-100 hover:shadow"
-        >
+        <tr v-for="plant in filteredPlants" :key="plant.id" class="table-row">
           <td class="table-cell">
             <DetailButton>
-              <img class="avatar" :src="require(`~/assets/${plant.image}`)" />
+              <img class="avatar" :src="`/assets/${plant.image}`" />
             </DetailButton>
           </td>
 
@@ -82,7 +78,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .plant-common-name {
   font-size: 1.125rem;
   font-weight: 600;
@@ -93,6 +89,10 @@ export default {
   font-style: italic;
 }
 
+.table-wrapper {
+  margin: 1.5rem;
+}
+
 .table-view {
   margin-top: 2rem;
 }
@@ -101,9 +101,19 @@ export default {
   table-layout: fixed;
   width: 100%;
 }
+
 .table-row {
   border-top: 1px solid #dee1e1;
+  color: rgba(107, 114, 128, 1);
+  border-top-width: 1px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(243, 244, 246, 1);
+    box-shadow: var(0 0 #0000), var(0 0 #0000), var(--sb-shadow);
+  }
 }
+
 .table-cell {
   vertical-align: middle;
   padding: 1rem;

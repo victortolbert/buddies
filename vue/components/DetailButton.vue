@@ -1,11 +1,38 @@
 <template>
-  <button @click="$store.commit('ui/OPEN_OVERLAY')">
+  <button type="button" @click="$store.commit('ui/OPEN_OVERLAY')">
     <slot>Details</slot>
+
     <Portal v-if="$store.state.ui.overlayIsOpen" to="overlays">
-      <Detail
+      <PlantDetail
         :show="$store.state.ui.overlayIsOpen"
-        @close="$store.commit('ui/CLOSE_OVERLAY')"
+        :plant-id="plantId"
+        @close="modalOpen = false"
       />
     </Portal>
   </button>
 </template>
+
+<script>
+export default {
+  name: 'PlantDetailButton',
+  props: {
+    plantId: {
+      type: Number,
+      default: null,
+    },
+  },
+  data: () => ({
+    isLoading: false,
+    hasError: false,
+    isSuccess: false,
+    modalOpen: false,
+  }),
+  computed: {
+    computedClasses() {
+      return {
+        'w-48': true,
+      }
+    },
+  },
+}
+</script>

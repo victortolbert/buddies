@@ -4,30 +4,44 @@
 
     <div class="icon-button-group">
       <button @click="$store.commit('ui/SET_ACTIVE_VIEW', 'grid')">
-        <BaseSvg class="icon" name="grid" />
+        <BaseIcon
+          :class="`icon ${
+            $store.state.ui.activeView === 'grid' && 'is-selected'
+          }`"
+          :name="`${
+            $store.state.ui.activeView === 'grid' ? 'grid-solid' : 'grid'
+          }`"
+        />
       </button>
 
       <button @click="$store.commit('ui/SET_ACTIVE_VIEW', 'list')">
-        <BaseSvg class="icon" name="list" />
+        <BaseIcon
+          :class="`icon ${
+            $store.state.ui.activeView === 'list' && 'is-selected'
+          }`"
+          :name="`${
+            $store.state.ui.activeView === 'list' ? 'list-solid' : 'list'
+          }`"
+        />
       </button>
     </div>
   </div>
 </template>
 
-<style lang="postcss">
-.icon-button-group {
-  display: flex;
-  justify-content: center;
-  height: 2rem;
-  margin-top: 0.25rem;
-  border-width: 1px;
-  border: transparent;
-}
+<script>
+import { mapState } from 'vuex'
 
-.icon {
-  color: rgba(156, 163, 175, 1);
-  &:hover {
-    color: rgba(75, 85, 99, 1);
-  }
+export default {
+  computed: {
+    ...mapState('ui', {
+      activeView: (state) => state.activeView,
+    }),
+  },
+}
+</script>
+
+<style>
+.icon.is-selected {
+  color: var(--ds-color-black);
 }
 </style>

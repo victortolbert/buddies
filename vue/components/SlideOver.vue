@@ -21,7 +21,14 @@
                 </h2>
                 <div class="flex items-center ml-3 h-7">
                   <button
-                    class="text-gray-400 bg-white rounded-md  hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                    class="
+                      text-gray-400
+                      bg-white
+                      rounded-md
+                      hover:text-gray-500
+                      focus:outline-none
+                      focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
+                    "
                   >
                     <span class="sr-only">Close panel</span>
                     <!-- Heroicon name: outline/x -->
@@ -134,12 +141,12 @@ export default {
   height: 100%;
   padding: 1.5rem 0;
   overflow-y: scroll;
-  background-color: rgba(255, 255, 255, var(--sb-bg-opacity));
+  background-color: rgba(255, 255, 255, var(--ds-bg-opacity));
 
-  --sb-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  --ds-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  box-shadow: var(--sb-ring-offset-shadow, 0 0 #0000),
-    var(--sb-ring-shadow, 0 0 #0000), var(--sb-shadow);
+  box-shadow: var(--ds-ring-offset-shadow, 0 0 #0000),
+    var(--ds-ring-shadow, 0 0 #0000), var(--ds-shadow);
 }
 
 .slide-over-header {

@@ -1,10 +1,9 @@
 <template>
-  <!-- px-3 py-1 text-sm font-medium leading-4 border border-transparent hover:bg-gray-50 -->
-  <button
-    type="button"
-    class="inline-flex items-center rounded  group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-    @click="isFavorite = !isFavorite"
-  >
+  <button type="button" class="favorite-button" @click="updateFavorite">
+    <BaseIcon
+      name="favorite"
+      :class="['icon', `${isFavorite && 'is-favorite'}`]"
+    />
     <svg
       class="text-gray-400 hover:text-gray-700 group-hover:text-gray-700"
       width="24"
@@ -27,11 +26,49 @@
 </template>
 
 <script>
+import commitlintConfig from '~/commitlint.config'
+
 export default {
+  props: {
+    plantId: {
+      type: Number,
+      default: null,
+    },
+  },
   data() {
     return {
       isFavorite: false,
     }
   },
+  methods: {
+    updateFavorite() {
+      this.isFavorite = !this.isFavorite
+      const index = this.$store.state.plants.list.findIndex(
+        (plant) => plant.id === this.plantId
+      )
+      this.$store.commit('plants/SET_FAVORITE', {
+        index,
+        id: this.plantId,
+        isFavorite: this.isFavorite,
+      })
+
+      // this.$store.state.plants.list[index].isFavorite = this.isFavorite
+      // console.log('updateFavorites', this.$store.state.plants.list[index])
+    },
+  },
 }
 </script>
+
+<style lang="postcss" scoped>
+.favorite-button {
+  /* group */
+  @apply inline-flex items-center rounded;
+}
+
+.icon {
+  @apply text-gray-400 hover:text-gray-700 group-hover:text-gray-700;
+}
+.icon.is-favorite {
+  color: var(--ds-color-red);
+}
+</style>
