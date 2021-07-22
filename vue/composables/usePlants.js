@@ -1,4 +1,4 @@
-import { useFetch, useContext, ref, watch, computed, reactive, toRefs, watchEffect } from '@nuxtjs/composition-api'
+import { useContext, useFetch, provide, computed, watchEffect, ref } from '@nuxtjs/composition-api'
 
 const filters = {
   all(plants) {
@@ -21,41 +21,31 @@ const filters = {
   },
 }
 
-
 export default function usePlants() {
   const { $axios } = useContext()
 
-  const state = reactive({
-    plants: [],
-    visibility: 'all',
-    query: '',
-    isLoading: true,
-  })
+  const plants = ref([])
+  const isLoading = ref(true)
+  const visibility = ref('all')
+  const query = ref('')
+
   const { fetch, fetchState } = useFetch(async () => {
-    state.plants = await $axios.$get(`plants?q=${state.query}`)
+    plants.value = await $axios.$get(`plants?q=${query.value}`)
   })
 
   const filteredPlants = computed(() => {
-    return filters[state.visibility](state.plants)
+    return filters[visibility.value](plants.value)
   })
 
-  watch(state.visibility, (newValue, oldValue) => {
-    console.log({ newValue, oldValue })
-
-    console.log('The new counter value is: ' + state.visibility)
-  })
-
-  const setVisibility = (value) => {
-    // now you'll have to access its value through the `value` property
-    state.visibility = value;
-    console.log(state.visibility)
-  };
+  provide('visibility', visibility)
 
   return {
-    ...toRefs(state),
     fetch,
     fetchState,
-    filteredPlants,
-    setVisibility
+    plants,
+    visibility,
+    query,
+    isLoading,
+    filteredPlants
   }
 }

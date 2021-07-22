@@ -1,13 +1,12 @@
 <template>
   <div class="category-switch">
     <label class="label" for="all-plants">Category</label>
-    {{ visibility }}
     <span class="button-group">
       <button
         id="all-plants"
         type="button"
         :class="`category-button ${visibility === 'all' && 'is-selected'}`"
-        @click="setVisibility('all')"
+        @click="visibility = 'all'"
       >
         All plants
       </button>
@@ -16,7 +15,7 @@
         :class="`category-button ${
           visibility === 'favorites' && 'is-selected'
         }`"
-        @click="setVisibility('favorites')"
+        @click="visibility = 'favorites'"
       >
         Favorites
       </button>
@@ -25,7 +24,7 @@
 </template>
 
 <script>
-import usePlants from '~/composables/usePlants'
+import { inject } from '@vue/composition-api'
 
 export default {
   props: {
@@ -35,11 +34,9 @@ export default {
     },
   },
   setup() {
-    const { visibility, setVisibility } = usePlants()
-
+    const visibility = inject('visibility')
     return {
       visibility,
-      setVisibility,
     }
   },
   data() {

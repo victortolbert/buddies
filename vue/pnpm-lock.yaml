@@ -134,7 +134,7 @@ devDependencies:
   postcss-nested: 5.0.5_postcss@8.3.6
   postcss-url: 10.1.3_postcss@8.3.6
   prettier: 2.3.2
-  start-server-and-test: 1.12.6
+  start-server-and-test: 1.13.0
   stylelint: 13.13.1
   stylelint-config-prettier: 8.0.2_stylelint@13.13.1
   stylelint-config-standard: 22.0.0_stylelint@13.13.1
@@ -7617,7 +7617,7 @@ packages:
       he: 1.2.0
       param-case: 2.1.1
       relateurl: 0.2.7
-      uglify-js: 3.13.10
+      uglify-js: 3.14.0
     dev: false
 
   /html-tags/2.0.0:
@@ -9379,7 +9379,7 @@ packages:
       dedent: 0.7.0
       enquirer: 2.3.6
       execa: 4.1.0
-      listr2: 3.10.0_enquirer@2.3.6
+      listr2: 3.11.0_enquirer@2.3.6
       log-symbols: 4.1.0
       micromatch: 4.0.4
       normalize-path: 3.0.0
@@ -9390,8 +9390,8 @@ packages:
       - supports-color
     dev: true
 
-  /listr2/3.10.0_enquirer@2.3.6:
-    resolution: {integrity: sha512-eP40ZHihu70sSmqFNbNy2NL1YwImmlMmPh9WO5sLmPDleurMHt3n+SwEWNu2kzKScexZnkyFtc1VI0z/TGlmpw==}
+  /listr2/3.11.0_enquirer@2.3.6:
+    resolution: {integrity: sha512-XLJVe2JgXCyQTa3FbSv11lkKExYmEyA4jltVo8z4FX10Vt1Yj8IMekBfwim0BSOM9uj1QMTJvDQQpHyuPbB/dQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       enquirer: '>= 2.3.0 < 3'
@@ -13205,8 +13205,8 @@ packages:
     resolution: {integrity: sha512-GrdeshiRmS1YLMYgzF16olf2jJ/IzxXY9lhKOskuVziubpTYcYqyOwYeJKzQkwy7uN0fYSsbsC4RQaXf9LCrYA==}
     dev: false
 
-  /start-server-and-test/1.12.6:
-    resolution: {integrity: sha512-2N+JgOCJIM36KqKZdER7+ybJqVCJRyND42wIUvK+T1iE015ee/FAVArjSHqnSBismQghPUsfV7fB8lCFcpL7/w==}
+  /start-server-and-test/1.13.0:
+    resolution: {integrity: sha512-04A+a3Rja4X4Ha3JtpmSHY8cQMlH7HnGFUTWaMhfZuSodqek7KKd7qn65TYjFNNX9yJinM502wMUGGJi67i72w==}
     engines: {node: '>=6'}
     hasBin: true
     dependencies:
@@ -14169,8 +14169,8 @@ packages:
   /ufo/0.7.7:
     resolution: {integrity: sha512-N25aY3HBkJBnahm+2l4JRBBrX5I+JPakF/tDHYDTjd3wUR7iFLdyiPhj8mBwBz21v728BKwM9L9tgBfCntgdlw==}
 
-  /uglify-js/3.13.10:
-    resolution: {integrity: sha512-57H3ACYFXeo1IaZ1w02sfA71wI60MGco/IQFjOqK+WtKoprh7Go2/yvd2HPtoJILO2Or84ncLccI4xoHMTSbGg==}
+  /uglify-js/3.14.0:
+    resolution: {integrity: sha512-R/tiGB1ZXp2BC+TkRGLwj8xUZgdfT2f4UZEgX6aVjJ5uttPrr4fYmwTWDGqVnBCLbOXRMY6nr/BTbwCtVfps0g==}
     engines: {node: '>=0.8.0'}
     hasBin: true
     dev: false

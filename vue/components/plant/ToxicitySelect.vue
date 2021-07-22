@@ -16,8 +16,14 @@
 
 <script>
 import { mapState } from 'vuex'
-
+import { inject } from '@vue/composition-api'
 export default {
+  setup() {
+    const visibility = inject('visibility')
+    return {
+      visibility,
+    }
+  },
   computed: {
     ...mapState({
       category: (state) => state.ui.category,
@@ -27,7 +33,7 @@ export default {
   methods: {
     updateCategory(event) {
       this.$store.commit('ui/UPDATE_CATEGORY', event.target.value)
-      this.$store.commit('plants/SET_VISIBILITY', event.target.value)
+      this.visibility = event.target.value
     },
   },
 }

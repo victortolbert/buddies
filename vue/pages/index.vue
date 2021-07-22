@@ -39,7 +39,6 @@
 
     <section v-if="fetchState.pending" class="section">
       <i>Searching...</i>
-      {{ fetchState }}
     </section>
 
     <section v-if="$store.state.ui.activeView === 'list'" class="section">
@@ -57,29 +56,18 @@ import usePlants from '~/composables/usePlants'
 
 export default {
   setup() {
-    const {
-      fetch,
-      fetchState,
-      isLoading,
-      query,
-      visibility,
-      plants,
-      filteredPlants,
-    } = usePlants()
+    const { fetch, fetchState, filteredPlants, visibility, query } = usePlants()
 
     return {
-      filteredPlants,
-      plants,
-      query,
       visibility,
-      isLoading,
+      query,
+      filteredPlants,
       fetch,
       fetchState,
     }
   },
 }
 </script>
-
 
 <style lang="postcss" scoped>
 .form {
