@@ -5,7 +5,7 @@
     </BasePageHeading>
 
     <div class="mx-6 mt-6 max-w-none">
-      <div class="prose-sm prose">
+      <div class="prose-sm prose max-w-none">
         <p>{{ page.description }}</p>
 
         <NuxtContent :document="page" />

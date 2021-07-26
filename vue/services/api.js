@@ -15,7 +15,7 @@ class BaseApiService {
 
   handleErrors(err) {
     // Note: here you may want to add your errors handling
-    console.log({message: 'Errors is handled here', err})
+    console.log({ message: 'Errors is handled here', err })
   }
 }
 
@@ -52,7 +52,7 @@ class ModelApiService extends ReadOnlyApiService {
         method: 'POST',
         body: JSON.stringify(data),
       })
-      const {id} = response.json()
+      const { id } = response.json()
       return id
     } catch (err) {
       this.handleErrors(err)
@@ -65,7 +65,7 @@ class ModelApiService extends ReadOnlyApiService {
         method: 'PUT',
         body: JSON.stringify(data),
       })
-      const {id: responseId} = response.json()
+      const { id: responseId } = response.json()
       return responseId
     } catch (err) {
       this.handleErrors(err)
@@ -105,7 +105,7 @@ class AlbumsApiService extends ModelApiService {
     Here you create you images uploading logic
     Unfortunately, jsonplaceholder don't provide url to upload files
      */
-    console.log({message: 'Image has been uploaded successfully!'})
+    console.log({ message: 'Image has been uploaded successfully!' })
     return true
   }
 

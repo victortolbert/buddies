@@ -7,9 +7,9 @@
 
       <button
         type="button"
-        class="inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm  bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
       >
-        <BaseIconSolid name="user-add" class="mr-3 -ml-1" />Invite Users
+        <BaseIconSolid name="pencil-alt" class="mr-3 -ml-1" />Customize
       </button>
     </header>
 
@@ -56,7 +56,7 @@ Title
 
     <section v-if="$store.state.user" class="grid grid-cols-12 gap-4 mx-4">
       <article
-        class="p-4 space-y-4 bg-white rounded shadow dark:bg-gray-900 col-span-full md:col-span-3"
+        class="p-4 space-y-4 bg-white rounded shadow  dark:bg-gray-900 col-span-full md:col-span-3"
       >
         <header>
           <h2 class="text-xl font-medium">Announcements</h2>
@@ -67,7 +67,7 @@ Title
       </article>
 
       <article
-        class="p-4 space-y-4 bg-white rounded shadow dark:bg-gray-900 col-span-full md:col-span-9"
+        class="p-4 space-y-4 bg-white rounded shadow  dark:bg-gray-900 col-span-full md:col-span-9"
       >
         <header>
           <h2 class="text-xl font-medium">Billing</h2>
@@ -90,7 +90,7 @@ Title
 
       <article
         v-if="false"
-        class="p-4 bg-white rounded shadow dark:bg-gray-900 col-span-full md:col-span-4"
+        class="p-4 bg-white rounded shadow  dark:bg-gray-900 col-span-full md:col-span-4"
       >
         <header>
           <h2 class="text-xl font-medium">Projects by Status</h2>
@@ -154,7 +154,7 @@ Title
     </section>
 
     <div
-      class="grid-cols-1 gap-4 mt-1 space-y-1 lg:mt-4 lg:space-y-0 lg:mx-4 lg:grid lg:grid-cols-12"
+      class="grid-cols-1 gap-4 mt-1 space-y-1  lg:mt-4 lg:space-y-0 lg:mx-4 lg:grid lg:grid-cols-12"
     >
       <!-- Comments -->
       <section
@@ -190,7 +190,7 @@ Title
                   <div class="relative flex items-start space-x-3">
                     <div class="relative">
                       <img
-                        class="flex items-center justify-center w-10 h-10 bg-gray-400 rounded-full ring-8 ring-white dark:ring-gray-800"
+                        class="flex items-center justify-center w-10 h-10 bg-gray-400 rounded-full  ring-8 ring-white dark:ring-gray-800"
                         src="https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=8&amp;w=256&amp;h=256&amp;q=80"
                         alt
                       />
@@ -260,7 +260,7 @@ Title
                     <div>
                       <div class="relative px-1">
                         <div
-                          class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full ring-8 ring-white"
+                          class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full  ring-8 ring-white"
                         >
                           <!-- Heroicon name: user-circle -->
                           <svg
@@ -317,7 +317,7 @@ Title
                     <div>
                       <div class="relative px-1">
                         <div
-                          class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full ring-8 ring-white"
+                          class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full  ring-8 ring-white"
                         >
                           <!-- Heroicon name: tag -->
                           <svg
@@ -423,7 +423,7 @@ Title
                   <div class="relative flex items-start space-x-3">
                     <div class="relative">
                       <img
-                        class="flex items-center justify-center w-10 h-10 bg-gray-400 rounded-full ring-8 ring-white"
+                        class="flex items-center justify-center w-10 h-10 bg-gray-400 rounded-full  ring-8 ring-white"
                         src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=8&amp;w=256&amp;h=256&amp;q=80"
                         alt
                       />
@@ -547,7 +547,7 @@ Title
               </h2>
               <div class="flex items-center ml-3 h-7">
                 <button
-                  class="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  class="text-gray-400 bg-white rounded-md  hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   @click="showNotifications = false"
                 >
                   <span class="sr-only">{{ $t('close_panel') }}</span>
@@ -570,13 +570,13 @@ Title
         <footer class="flex justify-end flex-shrink-0 px-4 py-4">
           <button
             type="button"
-            class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           >
             {{ $t('cancel') }}
           </button>
           <button
             type="submit"
-            class="inline-flex justify-center px-4 py-2 ml-4 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            class="inline-flex justify-center px-4 py-2 ml-4 text-sm font-medium text-white border border-transparent rounded-md shadow-sm  bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           >
             {{ $t('save') }}
           </button>

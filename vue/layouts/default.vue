@@ -17,9 +17,17 @@
       <div slot="header" class="py-2 bg-primary-500">
         <NuxtLink to="/" class="flex items-center text-white">
           <HancockLogo />
-          <span v-if="!collapsed" class="font-bold">Legacy Docs</span>
+          <span v-if="!collapsed" class="font-bold">Claims Consultants</span>
         </NuxtLink>
       </div>
+
+      <!-- <template v-slot:footer>
+        <footer
+          class="flex items-center justify-center px-2 space-x-2 text-white"
+        >
+          <KeyboardShortcut />
+        </footer>
+      </template> -->
 
       <span slot="toggle-icon" class="flex items-center px-2 space-x-2">
         <span>
@@ -56,10 +64,29 @@ export default {
           hiddenOnCollapse: true,
         },
         {
+          href: '/',
+          title: 'Home',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'home',
+            },
+          },
+        },
+        {
           href: '/dashboard',
           title: 'Dashboard',
-          icon: 'fa fa-tachometer-alt',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'template',
+            },
+            text: 'Custom Icon Text',
+          },
         },
+
         // {
         //   href: '/plants',
         //   title: 'Plants',
@@ -73,78 +100,109 @@ export default {
         {
           href: '/projects',
           title: 'Projects',
-          icon: 'fa fa-tasks',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'collection',
+            },
+          },
         },
         {
           href: '/reports',
           title: 'Reports',
-          icon: 'fa fa-tasks',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'document-report',
+            },
+          },
         },
         {
           href: '/settings',
           title: 'Settings',
-          icon: 'fa fa-cog',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'cog',
+            },
+          },
         },
-        {
-          title: 'Projects',
-          icon: 'fa fa-cog',
-          child: [
-            {
-              title: 'Projects List',
-              href: '/service-types',
-            },
-            {
-              title: 'Project Details',
-              child: [
-                {
-                  title: 'page',
-                },
-                {
-                  title: 'Page',
-                },
-              ],
-            },
-            {
-              title: 'Project Details History',
-            },
-            {
-              title: 'Project Details Comments',
-              child: [
-                {
-                  title: 'Level 3',
-                  child: [
-                    {
-                      title: 'Page',
-                    },
-                    {
-                      title: 'Page',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
+        // {
+        //   title: 'Projects',
+        //   icon: 'fa fa-cog',
+        //   child: [
+        //     {
+        //       title: 'Projects List',
+        //       href: '/service-types',
+        //     },
+        //     {
+        //       title: 'Project Details',
+        //       child: [
+        //         {
+        //           title: 'page',
+        //         },
+        //         {
+        //           title: 'Page',
+        //         },
+        //       ],
+        //     },
+        //     {
+        //       title: 'Project Details History',
+        //     },
+        //     {
+        //       title: 'Project Details Comments',
+        //       child: [
+        //         {
+        //           title: 'Level 3',
+        //           child: [
+        //             {
+        //               title: 'Page',
+        //             },
+        //             {
+        //               title: 'Page',
+        //             },
+        //           ],
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
         {
           href: '/calendar',
           title: 'Calendar',
-          icon: 'fa fa-calendar',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'calendar',
+            },
+          },
         },
         {
           href: '/customers',
           title: 'Customers',
-          icon: 'fa fa-users',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'office-building',
+            },
+          },
         },
         {
           href: '/billing',
           title: 'Billing',
-          icon: 'fa fa-credit-card',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'credit-card',
+            },
+          },
         },
-        // {
-        //   href: '/reports',
-        //   title: 'Reports',
-        //   icon: 'fa fa-file-alt',
-        // },
         // {
         //   href: '/service-types',
         //   title: 'Service Types',

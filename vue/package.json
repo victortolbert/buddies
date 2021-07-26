@@ -27,7 +27,7 @@
     "vue-clickaway": "^2.2.2",
     "vue-observe-visibility": "^1.0.0",
     "vue-sidebar-menu": "^4.8.1",
-    "vuejs-smart-table": "^1.0.0-beta.1"
+    "vuejs-smart-table": "^1.0.0-beta.3"
   },
   "devDependencies": {
     "@ant-design/colors": "^6.0.0",
@@ -80,11 +80,11 @@
     "babel-jest": "^27.0.6",
     "css-loader": "^5.2.7",
     "date-fns": "^2.23.0",
-    "eslint": "^7.30.0",
+    "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-testing-library": "^4.9.0",
-    "eslint-plugin-vue": "^7.13.0",
+    "eslint-plugin-testing-library": "^4.10.1",
+    "eslint-plugin-vue": "^7.14.0",
     "express": "4.17.1",
     "faker": "5.5.3",
     "husky": "^6.0.0",

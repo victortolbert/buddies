@@ -1,4 +1,18 @@
+import { resolve } from 'path'
+const compositionApiFullPath = resolve("./node_modules/@vue/composition-api/dist/vue-composition-api.esm.js");
+
 export default {
+  alias: {
+    // keep default settings
+    '~~': resolve(__dirname, './'),
+    '@@': resolve(__dirname, './'),
+    '~': resolve(__dirname, './'),
+    '@': resolve(__dirname, './'),
+    'assets': resolve(__dirname, './assets'), // (unless you have set a custom `dir.assets`)
+    'static': resolve(__dirname, './static'), // (unless you have set a custom `dir.static`)
+    // workaround
+    '@vue/composition-api/dist/vue-composition-api.esm.js': compositionApiFullPath,
+  },
   env: {
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
     apiURL: process.env.API_URL || 'https://api.victortolbert.com',
