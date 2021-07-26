@@ -76,60 +76,65 @@ export default {
           icon: 'fa fa-tasks',
         },
         {
+          href: '/reports',
+          title: 'Reports',
+          icon: 'fa fa-tasks',
+        },
+        {
           href: '/settings',
           title: 'Settings',
           icon: 'fa fa-cog',
         },
-        // {
-        //   title: 'Settings',
-        //   icon: 'fa fa-cog',
-        //   child: [
-        //     {
-        //       title: 'Service Type List',
-        //       href: '/service-types',
-        //     },
-        //     {
-        //       title: 'Territory List',
-        //       child: [
-        //         {
-        //           title: 'page',
-        //         },
-        //         {
-        //           title: 'Page',
-        //         },
-        //       ],
-        //     },
-        //     {
-        //       title: 'Announcements',
-        //     },
-        //     {
-        //       title: 'Another Level 2',
-        //       child: [
-        //         {
-        //           title: 'Level 3',
-        //           child: [
-        //             {
-        //               title: 'Page',
-        //             },
-        //             {
-        //               title: 'Page',
-        //             },
-        //           ],
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
+        {
+          title: 'Projects',
+          icon: 'fa fa-cog',
+          child: [
+            {
+              title: 'Projects List',
+              href: '/service-types',
+            },
+            {
+              title: 'Project Details',
+              child: [
+                {
+                  title: 'page',
+                },
+                {
+                  title: 'Page',
+                },
+              ],
+            },
+            {
+              title: 'Project Details History',
+            },
+            {
+              title: 'Project Details Comments',
+              child: [
+                {
+                  title: 'Level 3',
+                  child: [
+                    {
+                      title: 'Page',
+                    },
+                    {
+                      title: 'Page',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
         {
           href: '/calendar',
           title: 'Calendar',
           icon: 'fa fa-calendar',
         },
-        // {
-        //   href: '/customers',
-        //   title: 'Customers',
-        //   icon: 'fa fa-users',
-        // },
+        {
+          href: '/customers',
+          title: 'Customers',
+          icon: 'fa fa-users',
+        },
         {
           href: '/billing',
           title: 'Billing',

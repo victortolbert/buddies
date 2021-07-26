@@ -6,7 +6,7 @@ title: Overview
 
 ## Base
 
-- Avatar
+- [Avatar](#avatar)
 - Button
 - Select
 - Dropdown
@@ -37,3 +37,26 @@ title: Overview
 - [Schedule Tab](https://xd.adobe.com/view/1ccaa3fb-6e83-4f01-65fe-119b51af049d-6afb/screen/8384a6e0-862b-4090-95b3-b7ec3a73d4ae)
 - [History Tab](https://xd.adobe.com/view/1ccaa3fb-6e83-4f01-65fe-119b51af049d-6afb/screen/6980f6f5-8d78-4da6-b1c5-43588aec69b8)
 - [Comments Tab](https://xd.adobe.com/view/1ccaa3fb-6e83-4f01-65fe-119b51af049d-6afb/screen/ded10744-9c77-467a-a259-377fd291bba9)
+
+## Avatar
+
+```vue
+<template>
+  <img class="avatar" :src="src" alt="" />
+</template>
+
+<script>
+export default {
+  props: {
+    src: {
+      type: String,
+      default: 'images/avatar.jpeg',
+    },
+    appearance: {
+      type: String,
+      default: 'circle',
+    },
+  },
+}
+</script>
+```
