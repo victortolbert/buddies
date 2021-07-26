@@ -191,9 +191,6 @@ export default {
     extractCSS: true,
 
     extend() { },
-    transpile: [
-      /@fullcalendar.*/, // transpile ESM modules within all fullcalendar packages
-    ],
   },
 
   router: {
