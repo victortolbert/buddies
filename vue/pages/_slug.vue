@@ -1,9 +1,11 @@
 <template>
   <div>
-    <Navbar />
+    <BasePageHeading>
+      {{ page.title }}
+    </BasePageHeading>
 
-    <div class="max-w-md mx-6 mt-6">
-      <div class="prose">
+    <div class="mx-6 mt-6 max-w-none">
+      <div class="prose-sm prose">
         <p>{{ page.description }}</p>
 
         <NuxtContent :document="page" />

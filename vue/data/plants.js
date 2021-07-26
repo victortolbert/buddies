@@ -1,4 +1,4 @@
-module.exports = [
+export const Plants = [
   {
     id: 1,
     image: 'images/aloe-vera.jpeg',

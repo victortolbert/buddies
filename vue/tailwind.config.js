@@ -23,12 +23,16 @@ module.exports = {
       white: colors.white,
       current: 'currentColor',
       gray: colors.capeCod,
-      red: '#c63434',
+      // red: '#c63434',
+      red: colors.red,
       green: colors.jewel,
       blue: colors.blue,
       indigo: colors.indigo,
       'sky-blue': '#e9f8ff',
-      yellow: '#ffbc00',
+      // yellow: '#ffbc00',
+      yellow: colors.yellow,
+      primary: colors.sanJuan,
+      secondary: colors.bone,
     },
     extend: {
       spacing: {

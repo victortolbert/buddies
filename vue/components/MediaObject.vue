@@ -4,7 +4,7 @@
       <PlantDetailButton :plant-id="plant.id">
         <img
           class="image"
-          :src="`/assets/${plant.image}`"
+          :src="`/plants/${plant.image}`"
           :alt="`Image of ${plant.names.common}`"
         />
       </PlantDetailButton>

@@ -21,6 +21,10 @@ const filters = {
   },
 }
 
+const getPlantIndexById = (plants, plantId) =>
+  plants.findIndex(plant => plant.id.toString() === plantId.toString())
+
+
 export default function usePlants() {
   const { $axios } = useContext()
 
@@ -37,10 +41,25 @@ export default function usePlants() {
     return filters[visibility.value](plants.value)
   })
 
+  const setIsFavorite = (updatedPlant) => {
+    const index = getPlantIndexById(updatedPlant.id)
+
+    if (index === -1) {
+      // eslint-disable-next-line
+      return console.warn(`Unable to update event (id ${updatedPlant.id})`)
+    }
+
+    return plants.value.splice(index, 1, {
+      ...plants.value[index],
+      isFavorite: updatedPlant.isFavorite,
+    })
+  }
+
   provide('visibility', visibility)
 
   return {
     fetch,
+    setIsFavorite,
     fetchState,
     plants,
     visibility,

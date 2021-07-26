@@ -11,6 +11,30 @@ module.exports = {
   peachSchnapps: getColors('#ffdbd2'),
   pomegranate: getColors('#fb4319'),
   scooter: getColors('#27c3e3'),
+  sanJuan: {
+    '50': '#f5f6f8',
+    '100': '#eaedf1',
+    '200': '#ccd2db',
+    '300': '#adb7c5',
+    '400': '#6f819a',
+    '500': '#314B6F',
+    '600': '#2c4464',
+    '700': '#253853',
+    '800': '#1d2d43',
+    '900': '#182536'
+  },
+  bone: {
+    '50': '#fefdfc',
+    '100': '#fdfbfa',
+    '200': '#faf6f2',
+    '300': '#f7f0ea',
+    '400': '#f0e5da',
+    '500': '#EADACA',
+    '600': '#d3c4b6',
+    '700': '#b0a498',
+    '800': '#8c8379',
+    '900': '#736b63'
+  },
   flushMahogany: {
     '50': '#fcf5f5',
     '100': '#f9ebeb',

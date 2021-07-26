@@ -1,0 +1,342 @@
+# Query: plant
+# Flags: IgnoreExcludeSettings
+# Including: components/
+# Excluding: .nuxt,.dist
+# ContextLines: 1
+
+146 results - 14 files
+
+components/FavoriteButton.vue:
+   4      class="favorite-button"
+   5:     @click.prevent="updateFavorite(plantId)"
+   6    >
+
+  28  <script>
+  29: import usePlants from '~/composables/usePlants'
+  30  
+
+  32    props: {
+  33:     plantId: {
+  34        type: Number,
+
+  44        visibility,
+  45:       plants,
+  46:       filteredPlants,
+  47:     } = usePlants()
+  48  
+  49      return {
+  50:       filteredPlants,
+  51:       plants,
+  52        query,
+
+  66        this.isFavorite = !this.isFavorite
+  67:       const upDatedPlant = this.plants.find((plant) => plant.id === id)
+  68:       upDatedPlant.isFavorite = this.isFavorite
+  69:       this.$store.commit('plants/SET_FAVORITE', upDatedPlant)
+  70      },
+
+components/Hero.vue:
+   5        <h2 class="subtitle">
+   6:         Search and filter common house plants and see what’s safe for Sprinkles
+   7          to nibble on.
+
+  14            type="search"
+  15:           placeholder="Spider plant, fiddle leaf fig, etc..."
+  16          />
+
+components/Items.vue:
+   3      <ul>
+   4:       <li v-for="plant in plantStore.state.plants" :key="plant.id">
+   5:         <span>{{ plant.name }}</span>
+   6:         <button @click="plantStore.removeItem(plant.id)">delete</button>
+   7        </li>
+   8      </ul>
+   9:     <div>Total Items: {{ plantStore.totalLength }}</div>
+  10    </div>
+
+  14  export default {
+  15:   inject: ['plantStore'],
+  16  }
+
+components/MediaObject.vue:
+   3      <header class="image-container">
+   4:       <PlantDetailButton :plant-id="plant.id">
+   5          <img
+   6            class="image"
+   7:           :src="`/assets/${plant.image}`"
+   8:           :alt="`Image of ${plant.names.common}`"
+   9          />
+  10:       </PlantDetailButton>
+  11      </header>
+
+  13      <div class="text-container">
+  14:       <PlantDetailButton :plant-id="plant.id" class="title">
+  15:         {{ plant.names.common }}
+  16:       </PlantDetailButton>
+  17  
+  18:       <p class="subtitle">{{ plant.names.scientific }}</p>
+  19      </div>
+
+  25    props: {
+  26:     plant: {
+  27        type: Object,
+
+components/Navbar.vue:
+  12    props: {
+  13:     plantId: {
+  14        type: Number,
+
+components/Plants.vue:
+   3      <ul>
+   4:       <li v-for="plant in plantStore.state.plants" :key="plant.id">
+   5:         <span>{{ plant.name }}</span>
+   6:         <button @click="plantStore.removeItem(plant.id)">delete</button>
+   7        </li>
+   8      </ul>
+   9:     <div>Total Items: {{ plantStore.totalLength }}</div>
+  10    </div>
+
+  14  export default {
+  15:   inject: ['plantStore'],
+  16  }
+
+components/plant/CategorySwitch.vue:
+   2    <div class="category-switch">
+   3:     <label class="label" for="all-plants">Category</label>
+   4      <span class="button-group">
+   5        <button
+   6:         id="all-plants"
+   7          type="button"
+
+  10        >
+  11:         All plants
+  12        </button>
+
+  30    props: {
+  31:     plantId: {
+  32        type: Number,
+
+  49        this.isFavorite = !this.isFavorite
+  50:       const upDatedPlant = this.plants.find((plant) => plant.id === id)
+  51:       upDatedPlant.isFavorite = this.isFavorite
+  52:       this.$store.commit('plants/SET_FAVORITE', upDatedPlant)
+  53      },
+
+components/plant/DetailButton.vue:
+   6    >
+   7:     <slot>Plant Detail</slot>
+   8:     <PlantDetailModal
+   9        :show="modalOpen"
+  10:       :plant-id="plantId"
+  11        @close="modalOpen = false"
+
+  17  export default {
+  18:   name: 'PlantDetailButton',
+  19    props: {
+  20:     plantId: {
+  21        type: Number,
+
+components/plant/DetailModal.vue:
+   2    <ModalDialog v-click-outside="onClickOutside" :show="show" @close="cancel">
+   3:     <PlantDetails :plant="plant" @close="cancel" />
+   4    </ModalDialog>
+
+   8  export default {
+   9:   name: 'PlantDetailModal',
+  10    props: {
+
+  14      },
+  15:     plantId: {
+  16        type: Number,
+
+  21      return {
+  22:       plant: {},
+  23      }
+
+  25    async fetch() {
+  26:     const { data } = await this.$axios.get(`plants/${this.plantId}`)
+  27:     this.plant = data
+  28    },
+
+components/plant/Details.vue:
+    5          class="image"
+    6:         :src="`/assets/${plant.image}`"
+    7:         :alt="`Photo of ${plant.image}`"
+    8        />
+
+   17          <div>
+   18:           <h1 class="plant-common-name-title">
+   19:             {{ plant.names.common }}
+   20            </h1>
+   21:           <h2 class="plant-scientific-name-subtitle">
+   22:             {{ plant.names.scientific }}
+   23            </h2>
+
+   26          <div style="display: flex; align-items: center">
+   27:           <Badge :type="`${plant.toxicity && 'toxic'}`">
+   28:             {{ plant.toxicity ? 'Toxic' : 'Non-toxic' }}
+   29            </Badge>
+   30  
+   31:           <FavoriteButton :plant-id="plant.id" class="ml-2.5">
+   32              Favorite
+
+   39          <div class="detail-section-body">
+   40:           <p>{{ plant.details }}</p>
+   41          </div>
+
+   43  
+   44:       <div v-if="plant.toxicity" id="toxicity" class="detail-section">
+   45          <h3 class="detail-section-heading">Toxicity</h3>
+
+   47            <ul class="toxicity-list">
+   48:             <li>{{ plant.toxicity.property }}</li>
+   49:             <li>{{ plant.toxicity.symptoms }}</li>
+   50            </ul>
+
+   66              >
+   67:               {{ plant.care.water }}
+   68              </li>
+
+   74              >
+   75:               {{ plant.care.light }}
+   76              </li>
+
+   86    props: {
+   87:     plant: {
+   88        type: Object,
+
+  215  
+  216: .plant-common-name-title {
+  217    font-size: 2rem;
+
+  222  
+  223: .plant-scientific-name-subtitle {
+  224    margin-top: 0.5rem;
+
+components/plant/DetailSlideover.vue:
+   10              <!-- Detail -->
+   11:             <div v-if="plant" class="detail">
+   12                <div class="image-container">
+
+   14                    class="image"
+   15:                   :src="`/assets/${plant.image}`"
+   16:                   :alt="`Photo of ${plant.image}`"
+   17                  />
+
+   26                    <div>
+   27:                     <h1 class="plant-common-name-title">
+   28:                       {{ plant.names.common }}
+   29                      </h1>
+   30:                     <h2 class="plant-scientific-name-subtitle">
+   31:                       {{ plant.names.scientific }}
+   32                      </h2>
+
+   36                      <Badge
+   37:                       v-if="plant.toxicity"
+   38:                       :type="`${plant.toxicity && 'toxic'}`"
+   39                      >
+   40:                       {{ plant.toxicity ? 'Toxic' : 'Non-toxic' }}
+   41                      </Badge>
+
+   53                    <div class="detail-section-body">
+   54:                     <p>{{ plant.details }}</p>
+   55                    </div>
+
+   57  
+   58:                 <div v-if="plant.toxicity" id="toxicity" class="detail-section">
+   59                    <h3 class="detail-section-heading">Toxicity</h3>
+
+   67                      >
+   68:                       <li>{{ plant.toxicity.property }}</li>
+   69:                       <li>{{ plant.toxicity.symptoms }}</li>
+   70                      </ul>
+
+   89                        >
+   90:                         {{ plant.care.water }}
+   91                        </li>
+
+   99                        >
+  100:                         {{ plant.care.light }}
+  101                        </li>
+
+  118    props: {
+  119:     plant: {
+  120        type: Object,
+
+  247  
+  248: .plant-common-name-title {
+  249    font-size: 2rem;
+
+  254  
+  255: .plant-scientific-name-subtitle {
+  256    margin-top: 0.5rem;
+
+components/plant/Grid.vue:
+   2    <ul role="list" class="gallery">
+   3:     <li v-for="plant in plants" :key="plant.id" class="gallery-item">
+   4        <header
+
+   8            class="object-cover h-64 pointer-events-none group-hover:opacity-75"
+   9:           :src="`/assets/${plant.image}`"
+  10          />
+  11  
+  12:         <PlantDetailButton :plant-id="plant.id" class="gallery-button">
+  13            <span class="sr-only">View details for IMG_4985.HEIC</span>
+  14:         </PlantDetailButton>
+  15        </header>
+
+  18          <h3 class="text-lg font-semibold">
+  19:           {{ plant.names.common }}
+  20          </h3>
+  21          <div class="flex items-center">
+  22:           <Badge :type="`${plant.toxicity && 'toxic'}`">
+  23:             {{ plant.toxicity ? 'Toxic' : 'Non-toxic' }}
+  24            </Badge>
+
+  26            <FavoriteButton
+  27:             :plant-id="plant.id"
+  28              class="ml-2.5 text-gray-500 hover:text-gray-700"
+
+  39    props: {
+  40:     plants: {
+  41        type: Array,
+
+components/plant/List.vue:
+   3      <div
+   4:       v-for="plant in plants"
+   5:       :key="plant.id"
+   6        class="flex flex-col py-4 border-t  hover:bg-gray-50 sm:items-center sm:flex-row"
+   7      >
+   8:       <MediaObject class="w-64" :plant="plant" />
+   9  
+  10        <div class="w-32 mt-4 ml-0 sm:ml-4 sm:mt-0">
+  11:         <Badge :type="`${plant.toxicity && 'toxic'}`">
+  12:           {{ plant.toxicity ? 'Toxic' : 'Non-toxic' }}
+  13          </Badge>
+
+  16        <div class="flex-1 mt-4 ml-0 sm:truncate sm:mt-0 sm:ml-4">
+  17:         <PlantDetailButton :plant-id="plant.id" class="text-left">
+  18:           {{ plant.details }}
+  19:         </PlantDetailButton>
+  20        </div>
+
+  24        >
+  25:         <FavoriteButton :plant-id="plant.id"> Favorite </FavoriteButton>
+  26        </div>
+
+  33    props: {
+  34:     plants: {
+  35        type: Array,
+
+  39    methods: {
+  40:     showPlantDetails(id) {
+  41        this.$router.push({ path: `/${id}` })
+
+components/plant/Toolbar.vue: 
+  4        <div>
+  5:         <PlantCategorySwitch />
+  6        </div>
+
+  8        <div class="mt-4 sm:mt-0 sm:ml-4">
+  9:         <PlantToxicitySelect />
+  10        </div>

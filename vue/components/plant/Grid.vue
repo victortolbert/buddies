@@ -6,7 +6,7 @@
       >
         <img
           class="object-cover h-64 pointer-events-none group-hover:opacity-75"
-          :src="`/assets/${plant.image}`"
+          :src="`/plants/${plant.image}`"
         />
 
         <PlantDetailButton :plant-id="plant.id" class="gallery-button">

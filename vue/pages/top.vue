@@ -1,0 +1,91 @@
+<template>
+  <div class="page-wrapper">
+    <template v-if="$fetchState.pending && !_articles.length">
+      <div class="article-cards-wrapper">
+        <ContentPlaceholders
+          v-for="p in 30"
+          :key="p"
+          rounded
+          class="article-card-block"
+        >
+          <ContentPlaceholdersImg />
+          <ContentPlaceholdersText :lines="3" />
+        </ContentPlaceholders>
+      </div>
+    </template>
+
+    <template v-else-if="$fetchState.error">
+      <InlineErrorBlock :error="$fetchState.error" />
+    </template>
+
+    <template v-else>
+      <div class="article-cards-wrapper">
+        <!-- <ArticleCardBlock
+          v-for="(article, i) in _articles"
+          :key="article.id"
+          v-observe-visibility="
+            i === _articles.length - 1 ? lazyLoadArticles : false
+          "
+          :article="article"
+          class="article-card-block"
+        /> -->
+      </div>
+    </template>
+
+    <template v-if="$fetchState.pending && _articles.length">
+      <div class="article-cards-wrapper">
+        <ContentPlaceholders
+          v-for="p in 30"
+          :key="p"
+          rounded
+          class="article-card-block"
+        >
+          <ContentPlaceholdersImg />
+          <ContentPlaceholdersText :lines="3" />
+        </ContentPlaceholders>
+      </div>
+    </template>
+  </div>
+</template>
+
+<script>
+import Article from '~/models/Article'
+
+export default {
+  data() {
+    return {
+      currentPage: 1,
+      articles: [],
+    }
+  },
+  async fetch() {
+    const articles = await Article.params({
+      tag: 'nuxt',
+      top: '365',
+    })
+      .page(this.currentPage)
+      .get()
+    this.articles = this.articles.concat(articles)
+  },
+  head() {
+    return {
+      title: 'Top Nuxt.js articles',
+    }
+  },
+  computed: {
+    _articles() {
+      return this.articles.map((article) => new Article(article))
+    },
+  },
+  methods: {
+    lazyLoadArticles(isVisible) {
+      if (isVisible) {
+        if (this.currentPage < 5) {
+          this.currentPage++
+          this.$fetch()
+        }
+      }
+    },
+  },
+}
+</script>
