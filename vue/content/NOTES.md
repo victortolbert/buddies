@@ -1,80 +1,28 @@
-Catharine Chapman
-- Re
+---
+title: Notes
 ---
 
+## Team
 
-Customer Service - Call Queue, Schedule
-Scheduling Support - Triage, Pending, Schedule, Call Queue
-Field Services - Assigned, Confirmed, Working
-Claims Services - Review, Complete
-Estimating Services
-Billing / Collections - Billed, Closed
+| Team                  | Main Project Statuses monitored       |
+| --------------------- | ------------------------------------- |
+| Customer Service      | Call Queue, Schedule                  |
+| Scheduling Support    | Triage, Pending, Schedule, Call Queue |
+| Field Services        | Assigned, Confirmed, Working          |
+| Claims Services       | Review, Complete                      |
+| Estimating Services   |
+| Billing / Collections | Billed, Closed                        |
 
+- Catharine Chapman
+- Angela
 
-# Actions
+## Actions
 
 - Submit a Claim
 - Schedule Unaccompanied field inspection
 - Make a Payment
 
-
-# User Types
-- Adjuster
-- Billing Contact
-
-
-
-# Project Statuses
-
-- Assigned
-- Billed
-- Call Queue
-- Closed
-- Complete
-- Confirmed
-
-User Story 684
-
-
-0
-https://www.paulolyslager.com/why-users-blame-themselves-designers-mistakes/
-
-
-
-The database context is the main class that coordinates Entity Framework functionality for a data model. This class is created by deriving from the Microsoft.EntityFrameworkCore.DbContext class.
-
-## Let's Learn .NET: Web APIs
-
-https://channel9.msdn.com/Shows/lets-learn-dotnet/Web-APIs#comments
-
-https://graph.microsoft.com/v1.0/me
-https://collectionapi.metmuseum.org/public/collection/v1/departments
-
-
-## Azure CLI
-
-az account list
-az account set --subscription 'my-subscription-name'
-az group create --location westus --name MyRG
-az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
-az group delete -n MyRGx`
-
-docker run -it mcr.microsoft.com/azure-cli
-docker run -it -v ${HOME}/.ssh:/root/.ssh mcr.microsoft.com/azure-cli
-
-docker pull mcr.microsoft.com/azure-cli
-docker rmi mcr.microsoft.com/azure-cli
-
-## Workflow
-
-az account list
-az account set --subscription 'my-subscription-name'
-az group create --location westus --name MyRG
-az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
-az group delete -n MyRG
-
-
-# Personas / User Types
+## Personas / User Types
 
 - Technician (Inspector)
 - Customer Service Rep
@@ -84,11 +32,44 @@ az group delete -n MyRG
 - Customer
 - Service Tech
 - Insurance Adjuster
+- Billing Contact
 
-## Navigation
+## Project Statuses
 
-- Projects
+- Assigned
+- Billed
+- Call Queue
+- Closed
+- Complete
+- Confirmed
 
+## Random
+
+https://www.paulolyslager.com/why-users-blame-themselves-designers-mistakes/
+
+The database context is the main class that coordinates Entity Framework functionality for a data model. This class is created by deriving from the Microsoft.EntityFrameworkCore.DbContext class.
+
+## Let's Learn .NET: Web APIs
+
+- <https://channel9.msdn.com/Shows/lets-learn-dotnet/Web-APIs#comments>
+- <https://graph.microsoft.com/v1.0/me>
+- <https://collectionapi.metmuseum.org/public/collection/v1/departments>
+
+## Azure CLI Workflow
+
+```bash
+az account list
+az account set --subscription 'my-subscription-name'
+az group create --location westus --name MyRG
+az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
+az group delete -n MyRGx
+
+docker run -it mcr.microsoft.com/azure-cli
+docker run -it -v ${HOME}/.ssh:/root/.ssh mcr.microsoft.com/azure-cli
+
+docker pull mcr.microsoft.com/azure-cli
+docker rmi mcr.microsoft.com/azure-cli
+```
 
 ## Views/Pages
 
@@ -170,7 +151,6 @@ az group delete -n MyRG
 - Emergency Tarp
 - Estimate
 - Ladder Assist
-
 
 ## Carriers
 

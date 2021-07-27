@@ -17,6 +17,7 @@ export default {
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
     apiURL: process.env.API_URL || 'https://api.victortolbert.com',
     assetsURL: process.env.ASSETS_URL || 'http://localhost:3000',
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN
   },
   publicRuntimeConfig: {
     googleMapsApiKey:
@@ -31,7 +32,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Hancock Legacy Docs',
+    title: 'Hancock UI',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -57,9 +58,9 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/css/normalize.css',
+    // '~/assets/css/normalize.css',
     '~/assets/css/global.css',
-    '~/assets/css/sidebar-menu.css',
+    // '~/assets/css/components/sidebar-menu.css',
   ],
 
   // css: [
@@ -76,13 +77,19 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/maps.client',
+    '~/plugins/markdown',
     '~/plugins/oruga',
     '~/plugins/portal-vue',
     '~/plugins/v-click-outside',
-    '~/plugins/vue-api-query',
+    '~/plugins/vue-chartkick.client',
     '~/plugins/vue-content-placeholders',
     '~/plugins/vue-observe-visibility.client',
     '~/plugins/vue-shortkey',
+    '~/plugins/vuejs-smart-table',
+    // '@/plugins/init',
+    // '@/plugins/i18n.client',
+    '@/plugins/vue-scrollactive',
+    '@/plugins/menu.client'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -165,7 +172,19 @@ export default {
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-material-oceanic.css'
+      }
+    }
+  },
+
+  tailwindcss: {
+    jit: true,
+    // add '~tailwind.config` alias
+    exposeConfig: true
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -199,9 +218,14 @@ export default {
   },
   serverMiddleware: ['~/server'],
 
+  // generate: {
+  //   interval: 2000,
+  //   fallback: true,
+  // },
+
   generate: {
-    interval: 2000,
-    fallback: true,
+    fallback: '404.html', // for Netlify
+    routes: ['/'] // give the first url to start crawling
   },
 
   // sentry: {

@@ -31,7 +31,7 @@
 
       <span slot="toggle-icon" class="flex items-center px-2 space-x-2">
         <span>
-          <BaseIconSolid :name="`${collapsed ? 'page-first' : 'page-last'}`" />
+          <BaseIconSolid :name="`${collapsed ? 'page-last' : 'page-first'}`" />
         </span>
         <span v-if="!collapsed">Toggle Toolbar</span>
       </span>
@@ -63,17 +63,17 @@ export default {
           title: 'Main Navigation',
           hiddenOnCollapse: true,
         },
-        {
-          href: '/',
-          title: 'Home',
-          icon: {
-            element: 'base-icon-solid',
-            class: '',
-            attributes: {
-              name: 'home',
-            },
-          },
-        },
+        // {
+        //   href: '/',
+        //   title: 'Home',
+        //   icon: {
+        //     element: 'base-icon-solid',
+        //     class: '',
+        //     attributes: {
+        //       name: 'home',
+        //     },
+        //   },
+        // },
         {
           href: '/dashboard',
           title: 'Dashboard',
@@ -86,17 +86,6 @@ export default {
             text: 'Custom Icon Text',
           },
         },
-
-        // {
-        //   href: '/plants',
-        //   title: 'Plants',
-        //   icon: 'fa fa-tasks',
-        // },
-        // {
-        //   href: '/products',
-        //   title: 'Products',
-        //   icon: 'fa fa-tasks',
-        // },
         {
           href: '/projects',
           title: 'Projects',
@@ -105,6 +94,50 @@ export default {
             class: '',
             attributes: {
               name: 'collection',
+            },
+          },
+        },
+        {
+          href: '/calendar',
+          title: 'Calendar',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'calendar',
+            },
+          },
+        },
+        {
+          href: '/customers',
+          title: 'Customers',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'office-building',
+            },
+          },
+        },
+        {
+          href: '/billing',
+          title: 'Billing',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'credit-card',
+            },
+          },
+        },
+        {
+          href: '/users',
+          title: 'Users',
+          icon: {
+            element: 'base-icon-solid',
+            class: '',
+            attributes: {
+              name: 'users',
             },
           },
         },
@@ -170,49 +203,17 @@ export default {
         //     },
         //   ],
         // },
-        {
-          href: '/calendar',
-          title: 'Calendar',
-          icon: {
-            element: 'base-icon-solid',
-            class: '',
-            attributes: {
-              name: 'calendar',
-            },
-          },
-        },
-        {
-          href: '/customers',
-          title: 'Customers',
-          icon: {
-            element: 'base-icon-solid',
-            class: '',
-            attributes: {
-              name: 'office-building',
-            },
-          },
-        },
-        {
-          href: '/billing',
-          title: 'Billing',
-          icon: {
-            element: 'base-icon-solid',
-            class: '',
-            attributes: {
-              name: 'credit-card',
-            },
-          },
-        },
+
         // {
         //   href: '/service-types',
         //   title: 'Service Types',
         //   icon: 'fas fa-map',
         // },
-        {
-          href: '/service-regions',
-          title: 'Service Regions',
-          icon: 'fas fa-map',
-        },
+        // {
+        //   href: '/service-regions',
+        //   title: 'Service Regions',
+        //   icon: 'fas fa-map',
+        // },
         // {
         //   href: '/service-areas',
         //   title: 'Service Areas',

@@ -1,11 +1,3 @@
-<template>
-  <div>
-    <qrcode-stream></qrcode-stream>
-    <qrcode-drop-zone></qrcode-drop-zone>
-    <qrcode-capture></qrcode-capture>
-  </div>
-</template>
-
 <script>
 import { QrcodeStream, QrcodeDropZone, QrcodeCapture } from 'vue-qrcode-reader'
 
@@ -17,3 +9,13 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div>
+    <qrcode-stream></qrcode-stream>
+    <qrcode-drop-zone></qrcode-drop-zone>
+    <qrcode-capture></qrcode-capture>
+  </div>
+</template>
+
+<style lang="scss" module src="~/assets/css/components/test.module.scss"/>

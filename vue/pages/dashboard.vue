@@ -9,7 +9,7 @@
         type="button"
         class="inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm  bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
       >
-        <BaseIconSolid name="pencil-alt" class="mr-3 -ml-1" />Customize
+        <BaseIconSolid name="pencil" class="mr-3 -ml-1" />Customize
       </button>
     </header>
 
