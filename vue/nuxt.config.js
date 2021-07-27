@@ -112,7 +112,13 @@ export default {
 
     '@nuxtjs/tailwindcss',
 
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
+
+    // Doc: https://github.com/nuxt-community/color-mode-module
+    '@nuxtjs/color-mode',
+
+    // Doc: https://github.com/nuxt-community/moment-module
+    '@nuxtjs/moment',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -139,6 +145,9 @@ export default {
     credentials: true,
   },
 
+  colorMode: {
+    classSuffix: '',
+  },
 
   i18n: {
     locales: [

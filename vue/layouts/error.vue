@@ -19,7 +19,7 @@
 
     <h2>{{ error.message }}</h2>
 
-    <RandomImage />
+    <!-- <RandomImage /> -->
 
     <div class="error-navigation">
       <a href="#" @click="$router.push(-1)">&larr; Back</a>
