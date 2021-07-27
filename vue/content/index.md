@@ -21,6 +21,10 @@ title: Overview
     - [Avatar](#avatar)
     - [Badge](#badge)
     - [Chart](#chart)
+  - [DesignTokens](#designtokens)
+    - [Colors](#colors)
+    - [Typography](#typography)
+    - [Spacing](#spacing)
 - [Design](#design)
 
 ## Components
@@ -219,6 +223,15 @@ export default {
 }
 </script>
 ```
+
+
+### DesignTokens
+
+#### Colors
+
+#### Typography
+
+#### Spacing
 
 ## Design
 
