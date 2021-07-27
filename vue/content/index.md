@@ -15,9 +15,12 @@ title: Overview
     - [Reports](#reports)
     - [Settings](#settings)
   - [Patterns](#patterns)
-  - [Elemments](#elemments)
+    - [Kendo UI Grid](#kendo-ui-grid)
+    - [Kendo UI Window](#kendo-ui-window)
+  - [Elements](#elements)
     - [Avatar](#avatar)
-    - [Button](#button)
+    - [Badge](#badge)
+    - [Chart](#chart)
 - [Design](#design)
 
 ## Components
@@ -44,12 +47,157 @@ title: Overview
 
 ### Patterns
 
-- Kendo UI Grid
-- Kendo UI Window
+#### Kendo UI Grid
 
-### Elemments
+<code-group>
+  <code-block label="HTML" active>
+
+  ```html
+  <grid
+    :data-items="projects"
+    :pageable="pageable"
+    :sortable="sortable"
+    :sort="sort"
+    :take="take"
+    :skip="skip"
+    :columns="columns"
+    :style="{ height: '400px' }"
+    @datastatechange="dataStateChange"
+    @rowclick="rowClick"
+  >
+    <template #discontinuedTemplate="{ props }">
+      <td colspan="1">
+        <input
+          type="checkbox"
+          :checked="props.dataItem.Discontinued"
+          disabled="disabled"
+        />
+      </td>
+    </template>
+  </grid>
+  ```
+
+  </code-block>
+  <code-block label="JavaScript">
+
+  ```js
+  export default {
+    props: {
+      projects: {
+        type: Array,
+        default: () => [],
+      },
+    },
+  }
+  ```
+
+  </code-block>
+</code-group>
+
+
+
+
+#### Kendo UI Window
+
+### Elements
 
 #### Avatar
+
+<code-group>
+  <code-block label="HTML" active>
+
+  ```html
+  <img class="avatar" :src="src" alt="" />
+  ```
+
+  </code-block>
+  <code-block label="JavaScript">
+
+  ```js
+  export default {
+    props: {
+      src: {
+        type: String,
+        default: 'images/avatar.jpeg',
+      },
+      appearance: {
+        type: String,
+        default: 'circle',
+      },
+    },
+  }
+  ```
+
+  </code-block>
+</code-group>
+
+#### Badge
+
+<code-group>
+  <code-block label="HTML" active>
+
+  ```html
+  <span :class="classes">
+    <slot></slot>
+  </span>
+  ```
+
+  </code-block>
+  <code-block label="JavaScript">
+
+  ```js
+  export default {
+    props: {
+      type: {
+        type: String,
+        default: '',
+      },
+    },
+    computed: {
+      classes() {
+        return type === 'toxic' && 'is-toxic'
+      },
+    },
+  }
+  ```
+
+  </code-block>
+</code-group>
+
+#### Chart
+
+<code-group>
+  <code-block label="HTML" active>
+
+  ```html
+  <component :is="is" :data="data" :donut="true"></component>
+  ```
+
+  </code-block>
+  <code-block label="JavaScript">
+
+  ```js
+  export default {
+    props: {
+      type: {
+        type: String,
+        default: 'column',
+      },
+      data: {
+        type: [Array, Object],
+        default: () => [],
+      },
+    },
+    computed: {
+      is() {
+        return `${this.type}-chart`
+      },
+    },
+  }
+  ```
+
+  </code-block>
+</code-group>
 
 ```vue
 <template>
@@ -71,8 +219,6 @@ export default {
 }
 </script>
 ```
-
-#### Button
 
 ## Design
 

@@ -15,6 +15,7 @@
 <script>
 export default {
   layout: 'plain',
+  colorMode: 'light',
   async asyncData({ $content, params, error }) {
     const slug = params.slug || 'index'
     const page = await $content(slug)
