@@ -36,7 +36,6 @@
     "v-click-outside": "^3.1.2",
     "vue-api-query": "^1.9.1",
     "vue-clickaway": "^2.2.2",
-    "vue-js-modal": "^2.0.0-rc.6",
     "vue-observe-visibility": "^1.0.0",
     "vue-qrcode-reader": "^3.0.3",
     "vue-scrollactive": "^0.9.3",

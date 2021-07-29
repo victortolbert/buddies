@@ -57,7 +57,6 @@ export default {
     '~/plugins/v-click-outside',
     '~/plugins/vue-chartkick.client',
     '~/plugins/vue-content-placeholders',
-    '~/plugins/vue-js-modal',
     '~/plugins/vue-observe-visibility.client',
     '~/plugins/vue-shortkey',
     '~/plugins/vuejs-smart-table',
