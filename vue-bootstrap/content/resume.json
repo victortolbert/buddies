@@ -1,0 +1,226 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Victor Tolbert",
+    "label": "Lead User Interface Engineer",
+    "image": "",
+    "email": "victor@tolbert.design",
+    "phone": "(678) 613-3400",
+    "url": "http://tolbert.design",
+    "summary": "I’m a front-end developer with expertise building responsive, standards-compliant solutions for some high-profile companies. My most relevant strengths include __ revenue generating web products for consumer-facing web platforms like AT&T, WebMD and AutoTrader. Currently, I’m seeking similar opportunities to continue to build delightful user experiences with a small team, using modern tooling and frameworks in an environment with others who are passionate about their craft.",
+    "location": {
+      "address": "1547 Boulder Walk Drive",
+      "postalCode": "GA 30316",
+      "city": "Atlanta",
+      "countryCode": "GA",
+      "region": "Georgia"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "victortolbert",
+        "url": "https://github.com/victortolbert"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "victortolbert",
+        "url": "https://linkedin.com/in/victortolbert"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "VTi Consulting",
+      "location": "Atlanta, GA",
+      "description": "Awesome compression company",
+      "position": "Sole proprietor",
+      "url": "http://vticonsulting.com",
+      "startDate": "2013-12-01",
+      "endDate": "2014-12-01",
+      "summary": "Summary",
+      "highlights": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "name": "VTi Consulting",
+      "location": "Atlanta, GA",
+      "description": "Awesome compression company",
+      "position": "Sole proprietor",
+      "url": "http://vticonsulting.com",
+      "startDate": "2013-12-01",
+      "endDate": "2014-12-01",
+      "summary": "",
+      "highlights": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "name": "VTi Consulting",
+      "location": "Atlanta, GA",
+      "description": "Awesome compression company",
+      "position": "Sole proprietor",
+      "url": "http://vticonsulting.com",
+      "startDate": "2013-12-01",
+      "endDate": "2014-12-01",
+      "summary": "",
+      "highlights": [
+        "",
+        "",
+        ""
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Laravel Atlanta",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        ""
+      ]
+    },
+    {
+      "organization": "North Atlanta JavaScript",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        ""
+      ]
+    },
+    {
+      "organization": "Atlanta Ruby Users Group",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        ""
+      ]
+    },
+    {
+      "organization": "Project Open-hand",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        ""
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Morehouse College",
+      "url": "https://www.morehouse.edu/",
+      "area": "Business Management",
+      "studyType": "Bachelor",
+      "startDate": "1983-08-01",
+      "endDate": "1987-05-01",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "Digital Compression Pioneer Award",
+      "date": "2014-11-01",
+      "awarder": "Techcrunch",
+      "summary": "There is no spoon."
+    }
+  ],
+  "publications": [
+    {
+      "name": "Video compression for 3d media",
+      "publisher": "Hooli",
+      "releaseDate": "2014-10-01",
+      "url": "http://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)",
+      "summary": "Innovative middle-out compression algorithm that changes the way we store data."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript"
+      ]
+    },
+    {
+      "name": "Compression",
+      "level": "Master",
+      "keywords": [
+        "Mpeg",
+        "MP4",
+        "GIF"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Frontend Development",
+      "keywords": [
+        "Design Systems",
+        "Modern JavaScript",
+        "Test Automation"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Frankie Loscavio",
+      "reference": "Victor always showed me that there is something amazing to learn all the time. I found Victor's attitude refreshing and inspiring, while motivating me and others to be the same."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Booster Enterprises",
+      "description": "A mapping engine that misguides you",
+      "highlights": [
+        "",
+        "",
+        ""
+      ],
+      "keywords": [
+        "Vue.js",
+        "Cypress",
+        "Jest",
+        "Laravel"
+      ],
+      "startDate": "2018-10-29",
+      "endDate": "2020-08-24",
+      "url": "https://funrun.com",
+      "roles": [
+        "Frontend Developer",
+        "Senior Full-stack Developer"
+      ],
+      "entity": "Smoogle",
+      "type": "application"
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2017-12-24T15:53:00"
+  }
+}

@@ -115,9 +115,36 @@ title: Overview
   ```
 
   </code-block>
+  <code-block label="CSS">
+
+  ```scss
+  .avatar {
+
+  }
+  ```
+
+  </code-block>
   <code-block label="JavaScript">
 
   ```js
+  export default {
+    props: {
+      src: {
+        type: String,
+        default: 'images/avatar.jpeg',
+      },
+      appearance: {
+        type: String,
+        default: 'circle',
+      },
+    },
+  }
+  ```
+
+  </code-block>
+  <code-block label="TypeScript">
+
+  ```ts
   export default {
     props: {
       src: {

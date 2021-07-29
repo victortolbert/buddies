@@ -152,8 +152,18 @@ export default {
             },
           },
         },
+        // {
+        //   href: '/settings',
+        //   title: 'Settings',
+        //   icon: {
+        //     element: 'base-icon-solid',
+        //     class: '',
+        //     attributes: {
+        //       name: 'cog',
+        //     },
+        //   },
+        // },
         {
-          href: '/settings',
           title: 'Settings',
           icon: {
             element: 'base-icon-solid',
@@ -162,47 +172,43 @@ export default {
               name: 'cog',
             },
           },
+          child: [
+            {
+              title: 'Territories List',
+              href: '/territories',
+            },
+            {
+              title: 'Service Areas',
+              child: [
+                {
+                  title: 'Add Service Area',
+                },
+                {
+                  title: 'Assign Service Tech',
+                },
+              ],
+            },
+            {
+              title: 'Preferences',
+            },
+            {
+              title: 'Service Types',
+              child: [
+                {
+                  title: 'Just an example',
+                  child: [
+                    {
+                      title: 'A Page',
+                    },
+                    {
+                      title: 'Another Page',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         },
-        // {
-        //   title: 'Projects',
-        //   icon: 'fa fa-cog',
-        //   child: [
-        //     {
-        //       title: 'Projects List',
-        //       href: '/service-types',
-        //     },
-        //     {
-        //       title: 'Project Details',
-        //       child: [
-        //         {
-        //           title: 'page',
-        //         },
-        //         {
-        //           title: 'Page',
-        //         },
-        //       ],
-        //     },
-        //     {
-        //       title: 'Project Details History',
-        //     },
-        //     {
-        //       title: 'Project Details Comments',
-        //       child: [
-        //         {
-        //           title: 'Level 3',
-        //           child: [
-        //             {
-        //               title: 'Page',
-        //             },
-        //             {
-        //               title: 'Page',
-        //             },
-        //           ],
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
 
         // {
         //   href: '/service-types',

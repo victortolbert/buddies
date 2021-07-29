@@ -119,6 +119,9 @@ export default {
 
     // Doc: https://github.com/nuxt-community/moment-module
     '@nuxtjs/moment',
+
+    // Doc: https://github.com/nuxt-community/google-fonts-module
+    "@nuxtjs/google-fonts"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -129,8 +132,6 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-
-    '@nuxtjs/axios',
 
     '@nuxtjs/sentry',
 
@@ -147,6 +148,12 @@ export default {
 
   colorMode: {
     classSuffix: '',
+  },
+
+  googleFonts: {
+    families: {
+      Inter: true
+    }
   },
 
   i18n: {
