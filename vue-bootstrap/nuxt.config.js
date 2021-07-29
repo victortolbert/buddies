@@ -164,7 +164,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: /@fullcalendar.*/, // always needed
+    transpile: [/@fullcalendar.*/], // always needed
   },
   serverMiddleware: ['~/server'],
   generate: {
