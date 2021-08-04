@@ -31,8 +31,8 @@
 
       <span slot="toggle-icon" class="flex items-center px-2 space-x-2">
         <span>
-          <b-icon-arrow-bar-right v-if="collapsed" scale="1.5" />
-          <b-icon-arrow-bar-left v-else scale="1.5" />
+          <IconArrowRight v-if="collapsed" scale="1.5" />
+          <IconArrowLeft v-else scale="1.5" />
 
           <!-- <BaseIconOutlined
             :name="`${collapsed ? 'chevron-right' : 'chevron-left'}`"
