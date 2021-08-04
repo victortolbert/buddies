@@ -14,7 +14,49 @@
 
     <section v-if="$store.state.ui.activeView === 'list'" class="section">
       <!-- <ProjectList :projects="filteredProjects" /> -->
-      <pre>{{ filteredProjects }}</pre>
+      <label>Filter by Project Number</label>
+      <input v-model="filters.projectNumber.value" />
+
+      <label>Filter by Claim Number</label>
+      <input v-model="filters.claimNumber.value" />
+
+      <VTable :data="filteredProjects" :filters="filters">
+        <template #head>
+          <th>Project#</th>
+          <th>SVT</th>
+          <th>Date</th>
+          <th>INS CO</th>
+          <th>INS ADJ</th>
+          <th>Claim#</th>
+          <th>Service</th>
+          <th>City</th>
+          <th>ST</th>
+          <th>Zip</th>
+          <th>Region</th>
+          <th>Area</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </template>
+        <template #body="{ rows }">
+          <VTr v-for="row in rows" :key="row.guid" :row="row">
+            <td>{{ row.ProjectNumber }}</td>
+            <td>{{ row.ServiceTech }}</td>
+            <td>{{ row.Date }}</td>
+            <td>{{ row.InsuranceCompany }}</td>
+            <td>{{ row.InsuranceAdjuster }}</td>
+            <td>{{ row.ClaimNumber }}</td>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <td v-html="row.ServiceType"></td>
+            <td>{{ row.City }}</td>
+            <td>{{ row.State }}</td>
+            <td>{{ row.PostalCode }}</td>
+            <td>{{ row.ServiceRegion }}</td>
+            <td>{{ row.ServiceArea }}</td>
+            <td>{{ row.Status }}</td>
+            <td></td>
+          </VTr>
+        </template>
+      </VTable>
     </section>
 
     <section v-else class="p-6">
@@ -40,6 +82,12 @@ export default {
       fetchState,
     }
   },
+  data: () => ({
+    filters: {
+      projectNumber: { value: '', keys: ['ProjectNumber'] },
+      claimNumber: { value: '', keys: ['ClaimNumber'] },
+    },
+  }),
 }
 </script>
 

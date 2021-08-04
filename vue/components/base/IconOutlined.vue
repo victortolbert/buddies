@@ -113,6 +113,22 @@
     />
 
     <path
+      v-if="name === 'chevron-left'"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M15 19l-7-7 7-7"
+    />
+
+    <path
+      v-if="name === 'chevron-right'"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M9 5l7 7-7 7"
+    />
+
+    <path
       v-if="name === 'chevron-up'"
       stroke-linecap="round"
       stroke-linejoin="round"

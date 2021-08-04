@@ -193,7 +193,8 @@ export default {
       prism: {
         theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
-    }
+    },
+    nestedProperties: ['author.name']
   },
 
   tailwindcss: {
@@ -251,4 +252,21 @@ export default {
   //     debug: false,
   //   },
   // },
+
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === '.md') {
+        const { time } = require('reading-time')(document.text)
+
+        document.readingTime = time
+      }
+    }
+  },
+  // typescript: {
+  //   typeCheck: {
+  //     eslint: {
+  //       files: './**/*.{ts,js,vue}'
+  //     }
+  //   }
+  // }
 }

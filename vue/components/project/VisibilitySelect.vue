@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label for="location" class="label">Visible</label>
+    <label for="location" class="label">Filter</label>
     <select
       id="location"
       name="location"

@@ -18,7 +18,7 @@ export default {
   colorMode: 'light',
   async asyncData({ $content, params, error }) {
     const slug = params.slug || 'index'
-    const page = await $content(slug)
+    const page = await $content('docs', slug)
       .fetch()
       .catch((err) => {
         error({

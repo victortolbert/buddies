@@ -13,11 +13,11 @@
       <button
         type="button"
         :class="`category-button ${
-          visibility === 'favorites' && 'is-selected'
+          visibility === 'completed' && 'is-selected'
         }`"
-        @click="visibility = 'favorites'"
+        @click="visibility = 'completed'"
       >
-        Favorites
+        Billed
       </button>
     </span>
   </div>
@@ -41,15 +41,15 @@ export default {
   },
   data() {
     return {
-      isFavorite: false,
+      isCompleted: false,
     }
   },
   methods: {
-    updateFavorite(id) {
-      this.isFavorite = !this.isFavorite
-      const upDatedPlant = this.projects.find((project) => project.id === id)
-      upDatedPlant.isFavorite = this.isFavorite
-      this.$store.commit('projects/SET_FAVORITE', upDatedPlant)
+    updateCompleted(id) {
+      this.isCompleted = !this.isCompleted
+      const updatedProject = this.projects.find((project) => project.id === id)
+      updatedProject.isCompleted = this.isCompleted
+      this.$store.commit('projects/SET_COMPLETED', updatedProject)
     },
   },
 }

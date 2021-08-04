@@ -31,9 +31,15 @@
 
       <span slot="toggle-icon" class="flex items-center px-2 space-x-2">
         <span>
-          <BaseIconSolid :name="`${collapsed ? 'page-last' : 'page-first'}`" />
+          <!-- <IconArrowRight v-if="collapsed" />
+          <IconArrowLeft v-else /> -->
+
+          <BaseIconOutlined
+            class="w-5 h-5 text-gray-300"
+            :name="`${collapsed ? 'chevron-right' : 'chevron-left'}`"
+          />
         </span>
-        <span v-if="!collapsed">Toggle Toolbar</span>
+        <span v-if="!collapsed" class="whitespace-nowrap">Toggle Toolbar</span>
       </span>
     </SidebarMenu>
 
@@ -67,8 +73,8 @@ export default {
         //   href: '/',
         //   title: 'Home',
         //   icon: {
-        //     element: 'base-icon-solid',
-        //     class: '',
+        //     element: 'base-icon-outlined',
+        //     class: 'text-gray-300',
         //     attributes: {
         //       name: 'home',
         //     },
@@ -78,8 +84,8 @@ export default {
           href: '/dashboard',
           title: 'Dashboard',
           icon: {
-            element: 'base-icon-solid',
-            class: '',
+            element: 'base-icon-outlined',
+            class: 'text-gray-300',
             attributes: {
               name: 'template',
             },
@@ -90,8 +96,8 @@ export default {
           href: '/projects',
           title: 'Projects',
           icon: {
-            element: 'base-icon-solid',
-            class: '',
+            element: 'base-icon-outlined',
+            class: 'text-gray-300',
             attributes: {
               name: 'collection',
             },
@@ -101,8 +107,8 @@ export default {
           href: '/calendar',
           title: 'Calendar',
           icon: {
-            element: 'base-icon-solid',
-            class: '',
+            element: 'base-icon-outlined',
+            class: 'text-gray-300',
             attributes: {
               name: 'calendar',
             },
@@ -112,8 +118,8 @@ export default {
           href: '/customers',
           title: 'Customers',
           icon: {
-            element: 'base-icon-solid',
-            class: '',
+            element: 'base-icon-outlined',
+            class: 'text-gray-300',
             attributes: {
               name: 'office-building',
             },
@@ -123,8 +129,8 @@ export default {
           href: '/billing',
           title: 'Billing',
           icon: {
-            element: 'base-icon-solid',
-            class: '',
+            element: 'base-icon-outlined',
+            class: 'text-gray-300',
             attributes: {
               name: 'credit-card',
             },
@@ -134,8 +140,8 @@ export default {
           href: '/users',
           title: 'Users',
           icon: {
-            element: 'base-icon-solid',
-            class: '',
+            element: 'base-icon-outlined',
+            class: 'text-gray-300',
             attributes: {
               name: 'users',
             },
@@ -145,29 +151,29 @@ export default {
           href: '/reports',
           title: 'Reports',
           icon: {
-            element: 'base-icon-solid',
-            class: '',
+            element: 'base-icon-outlined',
+            class: 'text-gray-300',
             attributes: {
               name: 'document-report',
             },
           },
         },
-        // {
-        //   href: '/settings',
-        //   title: 'Settings',
-        //   icon: {
-        //     element: 'base-icon-solid',
-        //     class: '',
-        //     attributes: {
-        //       name: 'cog',
-        //     },
-        //   },
-        // },
+        {
+          href: '/docs',
+          title: 'Documentation',
+          icon: {
+            element: 'base-icon-outlined',
+            class: 'text-gray-300',
+            attributes: {
+              name: 'document-report',
+            },
+          },
+        },
         {
           title: 'Settings',
           icon: {
-            element: 'base-icon-solid',
-            class: '',
+            element: 'base-icon-outlined',
+            class: 'text-gray-300',
             attributes: {
               name: 'cog',
             },
@@ -175,7 +181,7 @@ export default {
           child: [
             {
               title: 'Territories List',
-              href: '/territories',
+              href: '/regions',
             },
             {
               title: 'Service Areas',
@@ -209,6 +215,46 @@ export default {
             },
           ],
         },
+        // {
+        //   title: 'Projects',
+        //   icon: 'fa fa-cog',
+        //   child: [
+        //     {
+        //       title: 'Projects List',
+        //       href: '/service-types',
+        //     },
+        //     {
+        //       title: 'Project Details',
+        //       child: [
+        //         {
+        //           title: 'page',
+        //         },
+        //         {
+        //           title: 'Page',
+        //         },
+        //       ],
+        //     },
+        //     {
+        //       title: 'Project Details History',
+        //     },
+        //     {
+        //       title: 'Project Details Comments',
+        //       child: [
+        //         {
+        //           title: 'Level 3',
+        //           child: [
+        //             {
+        //               title: 'Page',
+        //             },
+        //             {
+        //               title: 'Page',
+        //             },
+        //           ],
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
 
         // {
         //   href: '/service-types',

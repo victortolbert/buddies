@@ -14,9 +14,9 @@ const filters = {
       return !project.toxicity
     })
   },
-  favorites(projects) {
+  completed(projects) {
     return projects.filter(function (project) {
-      return project.isFavorite
+      return project.isCompleted
     })
   },
 }
