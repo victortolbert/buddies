@@ -135,7 +135,7 @@ export default {
 
     '@nuxtjs/sentry',
 
-    'nuxt-i18n',
+    '@nuxtjs/i18n',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
